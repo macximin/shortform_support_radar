@@ -1,0 +1,41 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v1",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "mcst_culture_support",
+    "publisher": "Ministry of Culture, Sports and Tourism (MCST)",
+    "category": "culture_support_announcement_index",
+    "authority": "primary_index",
+    "url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp"
+  },
+  "observed_at": "2026-08-31T22:50:02+00:00",
+  "http_status": 200,
+  "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp",
+  "page_sha256": "ddf120fbac8bd1a00e60a14dc671059bfa26b2e3d7846f4f48a9be99144dee7d",
+  "page_bytes": 147235,
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_links": [
+    {
+      "title": "새글 2026년 제6차 수출용 홍보자료(샘플) 지원 사업 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226634&menuNo=200104&sSort=2&pageIndex=3"
+    }
+  ]
+}

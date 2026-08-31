@@ -1,5 +1,26 @@
 # Shortform Support Radar
 
+## Current public source coverage
+
+- KOCCA PIMS direct-support announcements
+- WelCon / KOCCA export-event announcements
+- MCST culture-support announcement index
+- Bizinfo government-support announcement index
+
+The registry intentionally excludes e-Naradoum from crawling. It is an application
+and subsidy-execution system, so it is a human-led procedural route only after a
+specific notice has been selected.
+
+## Run a bounded public canary
+
+```bash
+python3 tools/collect_public_notices.py validate
+python3 tools/collect_public_notices.py collect --source kocca_pims_support --out evidence/2026-09-01/canary
+```
+
+Each receipt records a page hash and candidate links only; it does not store HTML,
+session state, credentials, applicant data, or application documents.
+
 AI 숏드라마와 Lezhin Snack IP 사업에 관련된 공개 지원사업을 **후보 단계**에서 수집·검증하는 private repository다.
 
 ## 범위

@@ -1,0 +1,44 @@
+{
+  "schema": "shortform-support-radar-source-registry/v1",
+  "purpose": "Public, no-auth announcement discovery only. Results are candidate records, never eligibility decisions or applications.",
+  "sources": [
+    {
+      "id": "kocca_pims_support",
+      "publisher": "Korea Creative Content Agency (KOCCA)",
+      "category": "direct_support_announcement",
+      "url": "https://www.kocca.kr/kocca/pims/list.do?category=4&menuNo=204104",
+      "authority": "primary",
+      "enabled": true
+    },
+    {
+      "id": "welcon_events",
+      "publisher": "WelCon / KOCCA",
+      "category": "export_event_announcement",
+      "url": "https://welcon.kocca.kr/ko/event/all",
+      "authority": "primary",
+      "enabled": true
+    },
+    {
+      "id": "mcst_culture_support",
+      "publisher": "Ministry of Culture, Sports and Tourism (MCST)",
+      "category": "culture_support_announcement_index",
+      "url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp",
+      "authority": "primary_index",
+      "enabled": true
+    },
+    {
+      "id": "bizinfo_notices",
+      "publisher": "K-Startup Business Information",
+      "category": "government_support_announcement_index",
+      "url": "https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/list.do",
+      "authority": "government_index",
+      "enabled": true
+    }
+  ],
+  "excluded": [
+    {
+      "name": "e-Naradoum",
+      "reason": "National subsidy application and execution system. This radar does not authenticate, submit, or collect applicant data. It is a procedural verification route after a human selects a notice."
+    }
+  ]
+}
