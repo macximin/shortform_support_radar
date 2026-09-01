@@ -30,7 +30,13 @@ from shortform_support_radar.policy import (  # noqa: E402
     policy_stamp,
 )
 from shortform_support_radar.collection import HostRateLimiter  # noqa: E402
-from shortform_support_radar.receipts import diff_documents  # noqa: E402
+from shortform_support_radar.receipts import (  # noqa: E402
+    diff_documents,
+    open_candidates,
+    previous_run_dir,
+    status_markdown,
+)
+import tempfile  # noqa: E402
 from shortform_support_radar.registry import REGISTRY_SCHEMA, load_registry, read_registry  # noqa: E402
 from shortform_support_radar.notice import KEYWORDS  # noqa: E402
 
@@ -366,6 +372,61 @@ class HostRateLimiterTests(unittest.TestCase):
         now[0] += 0.75
         limiter.wait_for(PublicUrl("https://a.go.kr/2"))
         self.assertEqual(slept, [0.25])
+
+
+class StatusTests(unittest.TestCase):
+    def documents(self):
+        return [
+            {
+                "source": {"id": "one"},
+                "candidate_links": [
+                    {"title": "닫힘 공고", "url": "https://a.go.kr/1", "period_end": "2026-08-31", "period_state": "closed"},
+                    {"title": "열림 공고", "url": "https://a.go.kr/2", "period_end": "2026-09-21", "period_state": "open"},
+                    {"title": "예정 공고", "url": "https://a.go.kr/3", "period_end": "2026-10-30", "period_state": "upcoming"},
+                ],
+            }
+        ]
+
+    def test_only_open_candidates_are_listed(self):
+        rows = open_candidates(self.documents())
+        self.assertEqual([r["title"] for r in rows], ["열림 공고"])
+        self.assertEqual(rows[0]["source_id"], "one")
+
+    def test_status_reports_days_left_and_disclaims_eligibility(self):
+        md = status_markdown(self.documents(), OBSERVED_ON)
+        self.assertIn("Open now (1)", md)
+        self.assertIn("| 2026-09-21 | 20 | one |", md)
+        self.assertIn("Eligibility", md)
+        self.assertNotIn("닫힘 공고", md)
+
+    def test_status_surfaces_what_is_new(self):
+        diff = {
+            "appeared_total": 1,
+            "disappeared_total": 0,
+            "sources": [{"appeared": [{"title": "새 공고", "url": "https://a.go.kr/9", "period_end": "2026-09-30"}]}],
+        }
+        md = status_markdown(self.documents(), OBSERVED_ON, diff)
+        self.assertIn("1 appeared, 0 no longer listed", md)
+        self.assertIn("[새 공고](https://a.go.kr/9) — closes 2026-09-30", md)
+
+    def test_status_handles_an_empty_board(self):
+        md = status_markdown([], OBSERVED_ON)
+        self.assertIn("Nothing open on the registered boards.", md)
+
+    def test_previous_run_dir_finds_the_last_dated_sibling(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for day in ("2026-08-30", "2026-08-31", "2026-09-01"):
+                (root / day / "daily").mkdir(parents=True)
+            self.assertEqual(previous_run_dir(root / "2026-09-01" / "daily"), root / "2026-08-31" / "daily")
+            self.assertIsNone(previous_run_dir(root / "2026-08-30" / "daily"))
+
+    def test_previous_run_dir_ignores_a_differently_named_run(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "2026-08-31" / "canary").mkdir(parents=True)
+            (root / "2026-09-01" / "daily").mkdir(parents=True)
+            self.assertIsNone(previous_run_dir(root / "2026-09-01" / "daily"))
 
 
 class DiffTests(unittest.TestCase):

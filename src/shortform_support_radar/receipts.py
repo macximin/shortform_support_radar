@@ -80,6 +80,82 @@ class Receipt:
         return target
 
 
+def load_directory(receipt_dir: Path) -> list[dict]:
+    return [json.loads(path.read_text(encoding="utf-8")) for path in sorted(receipt_dir.glob("*.json"))]
+
+
+def previous_run_dir(current: Path) -> Path | None:
+    """The most recent dated run before this one.
+
+    Runs live at evidence/<date>/<name>, so a sibling of the date directory that
+    sorts earlier and holds the same run name is the previous day.
+    """
+    date_dir = current.parent
+    root = date_dir.parent
+    if not root.is_dir():
+        return None
+    earlier = sorted(
+        (d for d in root.iterdir() if d.is_dir() and d.name < date_dir.name and (d / current.name).is_dir()),
+        key=lambda d: d.name,
+    )
+    return earlier[-1] / current.name if earlier else None
+
+
+def open_candidates(documents: list[dict]) -> list[dict]:
+    """Every candidate whose window is open, newest deadline last.
+
+    Cross-source repeats are kept: one notice seen on two boards is two
+    observations, and collapsing them would hide that a board stopped listing it.
+    """
+    rows = [
+        {**candidate, "source_id": document["source"]["id"]}
+        for document in documents
+        for candidate in document.get("candidate_links", [])
+        if candidate.get("period_state") == "open"
+    ]
+    return sorted(rows, key=lambda c: (c["period_end"] or "", c["title"]))
+
+
+def status_markdown(documents: list[dict], observed_on: dt.date, diff: dict | None = None) -> str:
+    """A short, current view of what is open. Candidates only, never a decision."""
+    lines = [
+        "# Open support-programme candidates",
+        "",
+        f"Observed {observed_on.isoformat()} (KST). "
+        "These are candidates read from public boards. Eligibility, regional conditions, "
+        "and rights are not checked here.",
+        "",
+    ]
+    if diff is not None:
+        appeared = diff.get("appeared_total", 0)
+        disappeared = diff.get("disappeared_total", 0)
+        lines += [f"Since the previous run: {appeared} appeared, {disappeared} no longer listed.", ""]
+        new_rows = [c for source in diff.get("sources", []) for c in source.get("appeared", [])]
+        if new_rows:
+            lines += ["## New since the previous run", ""]
+            for candidate in sorted(new_rows, key=lambda c: c.get("title", "")):
+                window = candidate.get("period_end") or "no published window"
+                lines.append(f"- [{candidate['title']}]({candidate['url']}) — closes {window}")
+            lines.append("")
+
+    rows = open_candidates(documents)
+    lines += [f"## Open now ({len(rows)})", ""]
+    if not rows:
+        lines += ["Nothing open on the registered boards.", ""]
+        return "\n".join(lines)
+
+    lines += ["| Closes | Days left | Source | Notice |", "| --- | --- | --- | --- |"]
+    for candidate in rows:
+        end = dt.date.fromisoformat(candidate["period_end"])
+        left = (end - observed_on).days
+        lines.append(
+            f"| {candidate['period_end']} | {left} | {candidate['source_id']} | "
+            f"[{candidate['title']}]({candidate['url']}) |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
 def _candidate_index(document: dict) -> dict[tuple[str, str], dict]:
     return {(c["title"], c["url"]): c for c in document.get("candidate_links", [])}
 

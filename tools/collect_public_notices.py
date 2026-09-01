@@ -16,9 +16,14 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from shortform_support_radar.collection import HostRateLimiter, collect, utc_now  # noqa: E402
+from shortform_support_radar.collection import HostRateLimiter, collect, today_kst, utc_now  # noqa: E402
 from shortform_support_radar.policy import PolicyViolation  # noqa: E402
-from shortform_support_radar.receipts import diff_directories  # noqa: E402
+from shortform_support_radar.receipts import (  # noqa: E402
+    diff_directories,
+    load_directory,
+    previous_run_dir,
+    status_markdown,
+)
 from shortform_support_radar.registry import load_registry  # noqa: E402
 
 
@@ -77,18 +82,31 @@ def run_collect(sources: list, selector: str, out_dir: Path) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "collect", "diff"))
+    parser.add_argument("command", choices=("validate", "collect", "diff", "status"))
     parser.add_argument("--registry", type=Path, default=Path("config/sources.json"))
     parser.add_argument("--source", help="one source id, or 'all'; required for collect")
     parser.add_argument("--out", type=Path, default=Path("evidence"))
-    parser.add_argument("--previous", type=Path, help="previous receipt directory; required for diff")
-    parser.add_argument("--current", type=Path, help="current receipt directory; required for diff")
+    parser.add_argument("--previous", type=Path, help="previous receipt directory; defaults to the run before --current")
+    parser.add_argument("--current", type=Path, help="current receipt directory; required for diff and status")
     args = parser.parse_args()
 
-    if args.command == "diff":
-        if not args.previous or not args.current:
-            parser.error("--previous and --current are required for diff")
-        print(json.dumps(diff_directories(args.previous, args.current, utc_now()), ensure_ascii=False, indent=2))
+    if args.command in {"diff", "status"}:
+        if not args.current:
+            parser.error(f"--current is required for {args.command}")
+        previous = args.previous or previous_run_dir(args.current)
+        report = diff_directories(previous, args.current, utc_now()) if previous else None
+        if args.command == "diff":
+            if report is None:
+                parser.error("no earlier run found; pass --previous explicitly")
+            print(json.dumps(report, ensure_ascii=False, indent=2))
+            return 0
+        markdown = status_markdown(load_directory(args.current), today_kst(), report)
+        if args.out and args.out != Path("evidence"):
+            args.out.parent.mkdir(parents=True, exist_ok=True)
+            args.out.write_text(markdown + "\n", encoding="utf-8")
+            print(json.dumps({"status": "ok", "written": str(args.out)}, ensure_ascii=False))
+        else:
+            print(markdown)
         return 0
 
     sources, errors = load_registry(args.registry)
