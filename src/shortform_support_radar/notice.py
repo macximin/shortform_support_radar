@@ -49,12 +49,25 @@ def strip_badges(value: str) -> str:
     return text
 
 
+def mentions(word: str, text: str) -> bool:
+    """Does the text use this vocabulary word?
+
+    A short latin word has to stand on its own: "ai" inside Thailand, Fair or
+    email is not a mention of AI, and "ip" inside equipment is not a mention of
+    IP. Korean compounds legitimately embed their terms, so 방송영상 inside
+    방송영상콘텐츠제작지원 counts.
+    """
+    lowered = text.lower()
+    if word.isascii():
+        return re.search(rf"(?<![a-z0-9]){re.escape(word.lower())}(?![a-z0-9])", lowered) is not None
+    return word in lowered
+
+
 def looks_like_notice_title(title: str) -> bool:
     """A title is a discovery match, never a fit conclusion."""
     if len(title) < MIN_TITLE_LENGTH:
         return False
-    lowered = title.lower()
-    if not any(keyword in lowered for keyword in (k.lower() for k in KEYWORDS)):
+    if not any(mentions(keyword, title) for keyword in KEYWORDS):
         return False
     return any(signal in title for signal in NOTICE_SIGNALS)
 

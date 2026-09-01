@@ -38,7 +38,19 @@ from shortform_support_radar.receipts import (  # noqa: E402
 )
 import tempfile  # noqa: E402
 from shortform_support_radar.registry import REGISTRY_SCHEMA, load_registry, read_registry  # noqa: E402
-from shortform_support_radar.notice import KEYWORDS  # noqa: E402
+from shortform_support_radar.notice import KEYWORDS, mentions  # noqa: E402
+from shortform_support_radar.notion import (  # noqa: E402
+    HUMAN_OWNED,
+    MACHINE_OWNED,
+    REFRESH_ON_REVISIT,
+    SEED_ON_CREATE,
+    create_payload,
+    interest_axes,
+    machine_properties,
+    plan_sync,
+    source_key,
+    update_payload,
+)
 
 OBSERVED_ON = dt.date(2026, 9, 1)
 BASE = PublicUrl("https://example.go.kr/list")
@@ -465,6 +477,101 @@ class StatusTests(unittest.TestCase):
             (root / "2026-08-31" / "canary").mkdir(parents=True)
             (root / "2026-09-01" / "daily").mkdir(parents=True)
             self.assertIsNone(previous_run_dir(root / "2026-09-01" / "daily"))
+
+
+class VocabularyMatchTests(unittest.TestCase):
+    def test_a_short_latin_word_must_stand_alone(self):
+        for text in ("2026 KOMICS Thailand", "XR Fair Tokyo", "email 안내", "equipment 임차지원"):
+            with self.subTest(text=text):
+                self.assertFalse(mentions("ai", text))
+                self.assertFalse(mentions("ip", text))
+
+    def test_a_real_mention_still_matches(self):
+        self.assertTrue(mentions("ai", "AI 콘텐츠 제작지원"))
+        self.assertTrue(mentions("ai", "생성형 AI, 제작"))
+        self.assertTrue(mentions("ip", "웹툰 IP 제작지원"))
+        self.assertTrue(mentions("webtoon", "Global Webtoon Support"))
+
+    def test_korean_compounds_still_match(self):
+        self.assertTrue(mentions("방송영상", "2026 방송영상콘텐츠제작지원"))
+        self.assertTrue(mentions("콘텐츠", "지역특화콘텐츠개발지원"))
+
+
+class NotionPublishTests(unittest.TestCase):
+    def candidate(self, **over):
+        base = {
+            "title": "2026년 웹툰 IP 제작지원 모집",
+            "url": "https://www.bizinfo.go.kr/d?pblancId=P1",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-30",
+            "period_state": "open",
+            "matched_query": "웹툰",
+        }
+        return {**base, **over}
+
+    def test_machine_properties_never_carry_a_judgement(self):
+        props = machine_properties(self.candidate(), "kocca_pims_open", OBSERVED_ON)
+        self.assertEqual(set(props) & HUMAN_OWNED, set())
+        self.assertTrue(set(props) <= MACHINE_OWNED)
+
+    def test_a_revisit_touches_only_board_facts(self):
+        payload = update_payload(self.candidate(), "kocca_pims_open", OBSERVED_ON)
+        self.assertEqual(set(payload["properties"]), set(REFRESH_ON_REVISIT))
+        self.assertEqual(set(payload["properties"]) & HUMAN_OWNED, set())
+
+    def test_refresh_set_cannot_include_a_human_field(self):
+        # The guard is what keeps a later edit to REFRESH_ON_REVISIT from silently
+        # overwriting somebody's review.
+        self.assertEqual(REFRESH_ON_REVISIT & HUMAN_OWNED, frozenset())
+
+    def test_a_new_row_is_seeded_as_unreviewed(self):
+        payload = create_payload(self.candidate(), "kocca_pims_open", OBSERVED_ON, "db")
+        for name, value in SEED_ON_CREATE.items():
+            self.assertEqual(payload["properties"][name]["select"]["name"], value)
+        self.assertEqual(payload["parent"], {"database_id": "db"})
+
+    def test_agency_is_set_only_for_a_board_that_runs_its_own_programmes(self):
+        own = machine_properties(self.candidate(), "kocca_pims_open", OBSERVED_ON)
+        self.assertEqual(own["기관"]["select"]["name"], "KOCCA")
+        aggregated = machine_properties(self.candidate(), "bizinfo_notices", OBSERVED_ON)
+        self.assertNotIn("기관", aggregated)
+        self.assertIn("수행기관 미확인", aggregated["수집 근거"]["rich_text"][0]["text"]["content"])
+
+    def test_axes_follow_the_words_the_title_uses(self):
+        self.assertEqual(interest_axes("XR Fair Tokyo 참가기업 모집"), ["해외진출"])
+        self.assertIn("방송영상", interest_axes("ATF 연계 방송콘텐츠 해외유통 지원"))
+        self.assertEqual(interest_axes("2026 KOMICS Thailand"), [])
+
+    def test_only_a_notice_with_a_window_is_published(self):
+        documents = [
+            {
+                "source": {"id": "kocca_pims_open"},
+                "candidate_links": [
+                    self.candidate(),
+                    self.candidate(title="마감된 공고", period_state="closed"),
+                    self.candidate(title="기간없는 공고", period_state=None, period_end=None),
+                    self.candidate(title="예정 공고", period_state="upcoming"),
+                ],
+            }
+        ]
+        creates, updates = plan_sync(documents, OBSERVED_ON, {})
+        self.assertEqual(
+            sorted(c["candidate"]["title"] for c in creates),
+            ["2026년 웹툰 IP 제작지원 모집", "예정 공고"],
+        )
+        self.assertEqual(updates, [])
+
+    def test_a_known_notice_is_refreshed_not_duplicated(self):
+        documents = [{"source": {"id": "kocca_pims_open"}, "candidate_links": [self.candidate()]}]
+        key = source_key(self.candidate(), "kocca_pims_open")
+        creates, updates = plan_sync(documents, OBSERVED_ON, {key: "page-1"})
+        self.assertEqual(creates, [])
+        self.assertEqual(updates[0]["page_id"], "page-1")
+
+    def test_identity_survives_the_search_path(self):
+        by_title = source_key(self.candidate(url="https://a.go.kr/d?keyword=콘텐츠"), "bizinfo_notices")
+        by_agency = source_key(self.candidate(url="https://a.go.kr/d?keyword=한국콘텐츠진흥원"), "bizinfo_notices")
+        self.assertEqual(by_title, by_agency)
 
 
 class DiffTests(unittest.TestCase):

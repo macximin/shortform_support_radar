@@ -17,6 +17,14 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from shortform_support_radar.collection import HostRateLimiter, collect, today_kst, utc_now  # noqa: E402
+from shortform_support_radar.notion import (  # noqa: E402
+    NotionConfig,
+    NotionNotConfigured,
+    apply_sync,
+    create_payload,
+    existing_keys,
+    plan_sync,
+)
 from shortform_support_radar.policy import PolicyViolation  # noqa: E402
 from shortform_support_radar.receipts import (  # noqa: E402
     diff_directories,
@@ -80,15 +88,58 @@ def run_collect(sources: list, selector: str, out_dir: Path) -> int:
     return exit_code
 
 
+def run_notion(current: Path, dry_run: bool) -> int:
+    documents = load_directory(current)
+    observed_on = today_kst()
+    if dry_run:
+        creates, updates = plan_sync(documents, observed_on, {})
+        preview = [
+            create_payload(e["candidate"], e["source_id"], observed_on, "DRY-RUN")["properties"]
+            for e in creates[:3]
+        ]
+        print(
+            json.dumps(
+                {
+                    "status": "dry-run",
+                    "would_create_or_refresh": len(creates) + len(updates),
+                    "sample_properties": preview,
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+        return 0
+    try:
+        config = NotionConfig.from_env()
+    except NotionNotConfigured as error:
+        print(json.dumps({"status": "skipped", "reason": str(error)}, ensure_ascii=False))
+        return 0
+    known = existing_keys(config)
+    creates, updates = plan_sync(documents, observed_on, known)
+    result = apply_sync(config, creates, updates, observed_on)
+    print(json.dumps({"status": "ok", **result, "already_in_db": len(known)}, ensure_ascii=False))
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "collect", "diff", "status"))
+    parser.add_argument("command", choices=("validate", "collect", "diff", "status", "notion"))
     parser.add_argument("--registry", type=Path, default=Path("config/sources.json"))
     parser.add_argument("--source", help="one source id, or 'all'; required for collect")
     parser.add_argument("--out", type=Path, default=Path("evidence"))
     parser.add_argument("--previous", type=Path, help="previous receipt directory; defaults to the run before --current")
-    parser.add_argument("--current", type=Path, help="current receipt directory; required for diff and status")
+    parser.add_argument("--current", type=Path, help="current receipt directory; required for diff, status and notion")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="notion: show what would be written without contacting Notion",
+    )
     args = parser.parse_args()
+
+    if args.command == "notion":
+        if not args.current:
+            parser.error("--current is required for notion")
+        return run_notion(args.current, args.dry_run)
 
     if args.command in {"diff", "status"}:
         if not args.current:

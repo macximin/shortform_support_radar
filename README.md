@@ -53,9 +53,39 @@ happened.
 .\tools\daily.ps1
 ```
 
-It collects into `evidence/<date>/daily`, regenerates [STATUS.md](STATUS.md), and
-commits. It exits non-zero and leaves a partial-run warning at the top of
-STATUS.md if a board did not answer. `-NoCommit` skips the commit.
+It collects into `evidence/<date>/daily`, regenerates [STATUS.md](STATUS.md),
+publishes to Notion, and commits. It exits non-zero and leaves a partial-run
+warning at the top of STATUS.md if a board did not answer. `-NoCommit` skips the
+commit, `-NoNotion` skips the publish, `-DryRunNotion` shows what would be written.
+
+## Notion
+
+The 지원사업 DB is the review surface; STATUS.md is the read-only mirror of the same
+run. The sync creates a row for a notice it has not seen and refreshes the deadline
+and last-checked date on one it has. It never writes anything else.
+
+That split is in code, not in a convention. `notion.py` names the properties the
+machine owns and the properties a person owns, a revisit payload is built only from
+the machine set, and a test fails if the two sets ever overlap. `상태`,
+`적격성 판정`, `근거 단계`, `권리·대표권 확인` and `메모` are seeded once when a row is
+created and never touched again, because a later run must not undo a review - the
+database says as much in its own `적격성 판정` description: 사람 확정 전 자동 승격 금지.
+
+`기관` is set only for a board that runs its own programmes. Bizinfo and the MCST
+index carry other bodies' notices in a column this tool does not read, so the
+property is left empty rather than guessed, and `수집 근거` says why.
+
+Only a notice with a published window is published, so the KOFIC board - which has
+no 모집기간 column - stays out of the database and is followed with `diff` instead.
+
+Credentials come from the environment and are never stored here:
+
+```powershell
+$env:NOTION_TOKEN = '<integration token>'
+$env:NOTION_DATABASE_ID = '<지원사업 DB id>'
+```
+
+Without them the step reports `skipped` and the rest of the run continues.
 
 [STATUS.md](STATUS.md) is the file to read: what is open, sorted by closing date
 with days remaining, plus what appeared since the previous run. Deadlines come
@@ -114,8 +144,9 @@ candidate-only claim is written.
 | `notice.py` | `NoticePeriod`, `Candidate`, the discovery vocabulary |
 | `registry.py` | `Source`, `SearchPlan`, registry parsing |
 | `boards.py` | HTML row reading; the only module shaped by how boards render |
-| `receipts.py` | `Receipt`, `Fetch`, run-over-run diff |
+| `receipts.py` | `Receipt`, `Fetch`, run-over-run diff, STATUS.md |
 | `collection.py` | Fetching a source and assembling one receipt |
+| `notion.py` | Which properties the machine may write, and the payloads |
 
 `Candidate` has no field capable of holding a verdict, and it is not given one.
 Whether a company may apply, and whether it would be selected, is decided against

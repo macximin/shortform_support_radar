@@ -7,7 +7,12 @@
 #>
 [CmdletBinding()]
 param(
-    [switch]$NoCommit
+    [switch]$NoCommit,
+    # Skip the Notion step entirely. Without it the step still runs but reports
+    # "skipped" when NOTION_TOKEN / NOTION_DATABASE_ID are absent.
+    [switch]$NoNotion,
+    # Show what would be written to Notion without contacting it.
+    [switch]$DryRunNotion
 )
 
 $ErrorActionPreference = 'Stop'
@@ -26,6 +31,18 @@ try {
 
     python3 $cli status --current $dir --out STATUS.md
     if ($LASTEXITCODE -ne 0) { throw 'could not write STATUS.md' }
+
+    # Notion is the review surface; STATUS.md is the read-only mirror. The sync
+    # only ever creates a new row or refreshes a deadline - it never writes back
+    # over a review.
+    if (-not $NoNotion) {
+        if ($DryRunNotion) {
+            python3 $cli notion --current $dir --dry-run
+        } else {
+            python3 $cli notion --current $dir
+        }
+        if ($LASTEXITCODE -ne 0) { Write-Warning 'Notion sync did not complete' }
+    }
 
     if (-not $NoCommit) {
         git add -A

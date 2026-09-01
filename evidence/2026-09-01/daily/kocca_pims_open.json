@@ -9,7 +9,7 @@
     "authority": "primary",
     "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104"
   },
-  "observed_at": "2026-09-01T08:23:14+00:00",
+  "observed_at": "2026-09-01T08:30:18+00:00",
   "observed_on_kst": "2026-09-01",
   "search_mode": "list_page",
   "fetches": [
@@ -18,7 +18,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
       "http_status": 200,
-      "page_sha256": "2605d75458601b8753832c81cc9af8d501b209b5b9fb5e0694eb0c9a4e281505",
+      "page_sha256": "9077739edb3683ba1b426d578d745c48e4a79b2a3ce66bfcd938e42e1399054d",
       "page_bytes": 133847
     }
   ],
