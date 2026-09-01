@@ -15,6 +15,13 @@ USER_AGENT = "shortform-support-radar/0.3 (public-candidate-research; no-auth)"
 MAX_RESPONSE_BYTES = 2_000_000
 REQUEST_INTERVAL_SECONDS = 1.0
 
+# These boards sit in Korea and a runner may not. A search endpoint that answers
+# in under a second locally took several from a US-hosted runner, so the timeout
+# is generous and a transient failure is retried rather than dropping the source.
+REQUEST_TIMEOUT_SECONDS = 60
+REQUEST_ATTEMPTS = 3
+RETRY_BACKOFF_SECONDS = 3.0
+
 
 class PolicyViolation(ValueError):
     """Raised when a value would cross this context's collection boundary."""

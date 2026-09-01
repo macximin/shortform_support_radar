@@ -100,7 +100,11 @@ def main() -> int:
                 parser.error("no earlier run found; pass --previous explicitly")
             print(json.dumps(report, ensure_ascii=False, indent=2))
             return 0
-        markdown = status_markdown(load_directory(args.current), today_kst(), report)
+        documents = load_directory(args.current)
+        collected = {d["source"]["id"] for d in documents}
+        registered, registry_errors = load_registry(args.registry)
+        missing = [s.id for s in registered if s.id not in collected] if not registry_errors else []
+        markdown = status_markdown(documents, today_kst(), report, missing)
         if args.out and args.out != Path("evidence"):
             args.out.parent.mkdir(parents=True, exist_ok=True)
             args.out.write_text(markdown + "\n", encoding="utf-8")

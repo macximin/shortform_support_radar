@@ -13,8 +13,12 @@ from .boards import read_candidates
 from .notice import KEYWORDS, Candidate
 from .policy import (
     MAX_RESPONSE_BYTES,
+    REQUEST_ATTEMPTS,
     REQUEST_INTERVAL_SECONDS,
+    REQUEST_TIMEOUT_SECONDS,
+    RETRY_BACKOFF_SECONDS,
     USER_AGENT,
+    PolicyViolation,
     PublicUrl,
     enforce_response_cap,
 )
@@ -70,16 +74,41 @@ def decode_body(body: bytes, content_type: str | None) -> str:
         return body.decode("utf-8", errors="replace")
 
 
-def fetch_public_page(url: PublicUrl) -> tuple[int, PublicUrl, bytes, str]:
-    """Read one public page anonymously. No cookies, no credentials, no session."""
+def _read_once(url: PublicUrl, timeout: float) -> tuple[int, PublicUrl, bytes, str]:
     request = Request(
         str(url),
         headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/xhtml+xml"},
     )
-    with urlopen(request, timeout=20) as response:
+    with urlopen(request, timeout=timeout) as response:
         body = enforce_response_cap(response.read(MAX_RESPONSE_BYTES + 1))
         final_url = PublicUrl.parse(response.geturl()) or url
         return response.status, final_url, body, decode_body(body, response.headers.get("Content-Type"))
+
+
+def fetch_public_page(
+    url: PublicUrl,
+    timeout: float = REQUEST_TIMEOUT_SECONDS,
+    attempts: int = REQUEST_ATTEMPTS,
+    sleep=time.sleep,
+) -> tuple[int, PublicUrl, bytes, str]:
+    """Read one public page anonymously. No cookies, no credentials, no session.
+
+    A timeout or connection reset is retried: these are public boards reached over
+    a long link, and one slow response should not drop a whole source. A policy
+    violation is not retried - it will not become allowed on a second try.
+    """
+    last: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return _read_once(url, timeout)
+        except PolicyViolation:
+            raise
+        except (OSError, TimeoutError) as error:
+            last = error
+            if attempt < attempts:
+                sleep(RETRY_BACKOFF_SECONDS * attempt)
+    assert last is not None
+    raise last
 
 
 def collect(source: Source, observed_on: dt.date | None = None, limiter: HostRateLimiter | None = None) -> Receipt:

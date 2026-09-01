@@ -409,6 +409,15 @@ class StatusTests(unittest.TestCase):
         self.assertIn("1 appeared, 0 no longer listed", md)
         self.assertIn("[새 공고](https://a.go.kr/9) — closes 2026-09-30", md)
 
+    def test_status_flags_a_partial_run(self):
+        md = status_markdown(self.documents(), OBSERVED_ON, None, ["bizinfo_notices", "mcst_culture_support"])
+        self.assertIn("Partial run", md)
+        self.assertIn("`bizinfo_notices`", md)
+        self.assertIn("`mcst_culture_support`", md)
+
+    def test_status_says_nothing_about_partiality_on_a_full_run(self):
+        self.assertNotIn("Partial run", status_markdown(self.documents(), OBSERVED_ON, None, []))
+
     def test_status_handles_an_empty_board(self):
         md = status_markdown([], OBSERVED_ON)
         self.assertIn("Nothing open on the registered boards.", md)

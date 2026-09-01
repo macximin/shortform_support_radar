@@ -116,7 +116,12 @@ def open_candidates(documents: list[dict]) -> list[dict]:
     return sorted(rows, key=lambda c: (c["period_end"] or "", c["title"]))
 
 
-def status_markdown(documents: list[dict], observed_on: dt.date, diff: dict | None = None) -> str:
+def status_markdown(
+    documents: list[dict],
+    observed_on: dt.date,
+    diff: dict | None = None,
+    missing_sources: list[str] | None = None,
+) -> str:
     """A short, current view of what is open. Candidates only, never a decision."""
     lines = [
         "# Open support-programme candidates",
@@ -126,6 +131,16 @@ def status_markdown(documents: list[dict], observed_on: dt.date, diff: dict | No
         "and rights are not checked here.",
         "",
     ]
+    if missing_sources:
+        # A silent gap is the dangerous failure: a board that did not answer looks
+        # exactly like a board with nothing open.
+        lines += [
+            "> **Partial run.** These registered sources returned nothing this time, so "
+            "anything open on them is missing from the table below: "
+            + ", ".join(f"`{s}`" for s in sorted(missing_sources))
+            + ".",
+            "",
+        ]
     if diff is not None:
         appeared = diff.get("appeared_total", 0)
         disappeared = diff.get("disappeared_total", 0)
