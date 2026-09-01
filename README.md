@@ -39,6 +39,32 @@ finding.
 A page hash cannot answer "what changed": view counters and session tokens move it
 on every fetch. Use `diff`, which compares candidate sets.
 
+Run the tests:
+
+```bash
+python3 tests/test_support_radar.py
+```
+
+## Module map
+
+The collection boundary is enforced by types, not by convention. `policy.py` owns
+it: a `PublicUrl` cannot be constructed from a credentialed or plaintext URL, the
+response cap raises rather than buffers, and `policy_stamp()` is the one place the
+candidate-only claim is written.
+
+| Module | Owns |
+| --- | --- |
+| `policy.py` | `PublicUrl`, response cap, the candidate-only stamp |
+| `notice.py` | `NoticePeriod`, `Candidate`, the discovery vocabulary |
+| `registry.py` | `Source`, `SearchPlan`, registry parsing |
+| `boards.py` | HTML row reading; the only module shaped by how boards render |
+| `receipts.py` | `Receipt`, `Fetch`, run-over-run diff |
+| `collection.py` | Fetching a source and assembling one receipt |
+
+`Candidate` has no field capable of holding a verdict, and it is not given one.
+Whether a company may apply, and whether it would be selected, is decided against
+the notice text outside this context.
+
 AI 숏드라마와 Lezhin Snack IP 사업에 관련된 공개 지원사업을 **후보 단계**에서 수집·검증하는 private repository다.
 
 ## 범위
