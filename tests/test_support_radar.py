@@ -366,6 +366,35 @@ class HostRateLimiterTests(unittest.TestCase):
         limiter.wait_for(PublicUrl("https://b.go.kr/1"))
         self.assertEqual(slept, [])
 
+    def test_a_failing_host_is_given_more_room_each_time(self):
+        limiter, slept, _ = self.limiter()
+        url = PublicUrl("https://a.go.kr/1")
+        self.assertEqual(limiter.interval_for(url), 1.0)
+        limiter.penalise(url)
+        self.assertEqual(limiter.interval_for(url), 5.0)
+        limiter.penalise(url)
+        self.assertEqual(limiter.interval_for(url), 9.0)
+
+    def test_a_penalty_does_not_touch_another_host(self):
+        limiter, _, _ = self.limiter()
+        limiter.penalise(PublicUrl("https://a.go.kr/1"))
+        self.assertEqual(limiter.interval_for(PublicUrl("https://b.go.kr/1")), 1.0)
+
+    def test_host_pacing_is_capped(self):
+        limiter, _, _ = self.limiter()
+        url = PublicUrl("https://a.go.kr/1")
+        for _ in range(20):
+            limiter.penalise(url)
+        self.assertEqual(limiter.interval_for(url), 20.0)
+
+    def test_a_penalised_host_actually_waits_longer(self):
+        limiter, slept, _ = self.limiter()
+        url = PublicUrl("https://a.go.kr/1")
+        limiter.wait_for(url)
+        limiter.penalise(url)
+        limiter.wait_for(url)
+        self.assertEqual(slept, [5.0])
+
     def test_elapsed_time_counts_against_the_interval(self):
         limiter, slept, now = self.limiter()
         limiter.wait_for(PublicUrl("https://a.go.kr/1"))

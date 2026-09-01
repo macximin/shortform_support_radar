@@ -12,6 +12,8 @@ from urllib.request import Request, urlopen
 from .boards import read_candidates
 from .notice import KEYWORDS, Candidate
 from .policy import (
+    HOST_PENALTY_SECONDS,
+    MAX_HOST_INTERVAL_SECONDS,
     MAX_RESPONSE_BYTES,
     REQUEST_ATTEMPTS,
     REQUEST_INTERVAL_SECONDS,
@@ -40,17 +42,30 @@ class HostRateLimiter:
         self._sleep = sleep
         self._clock = clock
         self._last: dict[str, float] = {}
+        self._penalty: dict[str, float] = {}
+
+    def interval_for(self, url: PublicUrl) -> float:
+        return min(self._interval + self._penalty.get(self._host(url), 0.0), MAX_HOST_INTERVAL_SECONDS)
+
+    def penalise(self, url: PublicUrl) -> None:
+        """Widen this host's pacing after it failed to answer."""
+        host = self._host(url)
+        self._penalty[host] = self._penalty.get(host, 0.0) + HOST_PENALTY_SECONDS
 
     def wait_for(self, url: PublicUrl) -> None:
-        host = urlparse(str(url)).netloc
+        host = self._host(url)
         previous = self._last.get(host)
         now = self._clock()
         if previous is not None:
-            remaining = self._interval - (now - previous)
+            remaining = self.interval_for(url) - (now - previous)
             if remaining > 0:
                 self._sleep(remaining)
                 now = self._clock()
         self._last[host] = now
+
+    @staticmethod
+    def _host(url: PublicUrl) -> str:
+        return urlparse(str(url)).netloc
 
 
 def utc_now() -> str:
@@ -121,7 +136,11 @@ def collect(source: Source, observed_on: dt.date | None = None, limiter: HostRat
 
     for query, url in source.requests():
         limiter.wait_for(url)
-        status, final_url, body, page = fetch_public_page(url)
+        try:
+            status, final_url, body, page = fetch_public_page(url)
+        except (OSError, TimeoutError):
+            limiter.penalise(url)
+            raise
         fetches.append(
             Fetch(
                 query=query,

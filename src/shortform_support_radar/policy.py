@@ -18,9 +18,15 @@ REQUEST_INTERVAL_SECONDS = 1.0
 # These boards sit in Korea and a runner may not. A search endpoint that answers
 # in under a second locally took several from a US-hosted runner, so the timeout
 # is generous and a transient failure is retried rather than dropping the source.
-REQUEST_TIMEOUT_SECONDS = 60
+REQUEST_TIMEOUT_SECONDS = 45
 REQUEST_ATTEMPTS = 3
-RETRY_BACKOFF_SECONDS = 3.0
+RETRY_BACKOFF_SECONDS = 5.0
+
+# A host that has just timed out is the last one to hurry. Each failure widens
+# that host's pacing for the rest of the run, so a struggling board is given room
+# instead of being asked 14 more times at the same rate.
+HOST_PENALTY_SECONDS = 4.0
+MAX_HOST_INTERVAL_SECONDS = 20.0
 
 
 class PolicyViolation(ValueError):
