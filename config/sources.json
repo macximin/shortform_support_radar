@@ -1,12 +1,21 @@
 {
   "schema": "shortform-support-radar-source-registry/v1",
   "purpose": "Public, no-auth announcement discovery only. Results are candidate records, never eligibility decisions or applications.",
+  "searchNote": "A source with a search block queries the board's own index. A date-sorted list page only exposes its newest rows, so a board with thousands of notices must be queried, not scraped page by page.",
   "sources": [
     {
       "id": "kocca_pims_support",
       "publisher": "Korea Creative Content Agency (KOCCA)",
       "category": "direct_support_announcement",
       "url": "https://www.kocca.kr/kocca/pims/list.do?category=4&menuNo=204104",
+      "authority": "primary",
+      "enabled": true
+    },
+    {
+      "id": "kocca_pims_support_all",
+      "publisher": "Korea Creative Content Agency (KOCCA)",
+      "category": "direct_support_announcement",
+      "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
       "authority": "primary",
       "enabled": true
     },
@@ -24,7 +33,23 @@
       "category": "culture_support_announcement_index",
       "url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp",
       "authority": "primary_index",
-      "enabled": true
+      "enabled": true,
+      "search": {
+        "param": "pSearchWord",
+        "extraParams": {
+          "pSearchType": "01",
+          "pCurrentPage": "1"
+        },
+        "queries": [
+          "콘텐츠",
+          "웹툰",
+          "만화",
+          "영상",
+          "드라마",
+          "인공지능",
+          "해외진출"
+        ]
+      }
     },
     {
       "id": "bizinfo_notices",
@@ -39,6 +64,14 @@
     {
       "name": "e-Naradoum",
       "reason": "National subsidy application and execution system. This radar does not authenticate, submit, or collect applicant data. It is a procedural verification route after a human selects a notice."
+    },
+    {
+      "name": "KOCCA finance-support board (B0158960)",
+      "reason": "Loan, guarantee, and content-valuation products. Eligibility turns on credit and collateral rather than competitive selection, so it does not belong in the same candidate stream as production-support calls."
+    },
+    {
+      "name": "MOEF (mofe.go.kr) and MCST portal main",
+      "reason": "Budget, tax, and cross-sector ministry news. Content calls are executed through KOCCA and the MCST culture-support index already registered here."
     }
   ]
 }

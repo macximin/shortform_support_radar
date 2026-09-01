@@ -1,0 +1,57 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v1",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "kocca_pims_support_all",
+    "publisher": "Korea Creative Content Agency (KOCCA)",
+    "category": "direct_support_announcement",
+    "authority": "primary",
+    "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104"
+  },
+  "observed_at": "2026-09-01T00:42:36+00:00",
+  "http_status": 200,
+  "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
+  "page_sha256": "bbaefa482dfa4dac736953374fa3dcffcc39d5e82cc3b9b854fbccb747e6fd46",
+  "page_bytes": 133847,
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_links": [
+    {
+      "title": "2027 콘텐츠 아메리카 한국공동관 및 쇼케이스 참가기업 모집공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00085009&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd="
+    },
+    {
+      "title": "2026년 게임인재원 AI 외래 강사 Pool 2차 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00034006&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd="
+    },
+    {
+      "title": "수출 플러스 지원단",
+      "url": "https://www.export119.go.kr/"
+    },
+    {
+      "title": "뉴콘텐츠기업지원센터",
+      "url": "https://www.kocca.kr/kocca/subPage.do?menuNo=204842"
+    },
+    {
+      "title": "지역콘텐츠기업지원센터",
+      "url": "https://www.kocca.kr/kocca/subPage.do?menuNo=205006"
+    }
+  ]
+}

@@ -1,0 +1,482 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v2",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "mcst_culture_support",
+    "publisher": "Ministry of Culture, Sports and Tourism (MCST)",
+    "category": "culture_support_announcement_index",
+    "authority": "primary_index",
+    "url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp"
+  },
+  "observed_at": "2026-09-01T00:58:34+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "server_side_query",
+  "fetches": [
+    {
+      "query": "콘텐츠",
+      "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EC%BD%98%ED%85%90%EC%B8%A0",
+      "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EC%BD%98%ED%85%90%EC%B8%A0",
+      "http_status": 200,
+      "page_sha256": "24deca74d7c05c2cf9ff4c1ef7b95d2f7314fe787c6b6194b47a9864be803370",
+      "page_bytes": 147124
+    },
+    {
+      "query": "웹툰",
+      "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EC%9B%B9%ED%88%B0",
+      "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EC%9B%B9%ED%88%B0",
+      "http_status": 200,
+      "page_sha256": "5c085d5e4b5df5fdf97ee101655fc27b8d0942006656107320bbd3fac34c4938",
+      "page_bytes": 146117
+    },
+    {
+      "query": "만화",
+      "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EB%A7%8C%ED%99%94",
+      "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EB%A7%8C%ED%99%94",
+      "http_status": 200,
+      "page_sha256": "7a66814c925b9f68747ab0e3eeb550b18b283b57faef34ca9b23b3f9808971da",
+      "page_bytes": 142145
+    },
+    {
+      "query": "영상",
+      "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EC%98%81%EC%83%81",
+      "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EC%98%81%EC%83%81",
+      "http_status": 200,
+      "page_sha256": "5496889846781c5af984b4c9785e15f58223f6316d25382dd93c4434c20b24e5",
+      "page_bytes": 145811
+    },
+    {
+      "query": "드라마",
+      "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EB%93%9C%EB%9D%BC%EB%A7%88",
+      "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EB%93%9C%EB%9D%BC%EB%A7%88",
+      "http_status": 200,
+      "page_sha256": "47037a1f0294a2ab5e7dbc1cc37005917f167e304781bcdceb32f1910ef6c434",
+      "page_bytes": 139849
+    },
+    {
+      "query": "인공지능",
+      "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
+      "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
+      "http_status": 200,
+      "page_sha256": "96ec86631a97d087a9415910d1f0b8d154a9393922a452898682760c27cb851a",
+      "page_bytes": 145614
+    },
+    {
+      "query": "해외진출",
+      "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
+      "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pCurrentPage=1&pSearchWord=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
+      "http_status": 200,
+      "page_sha256": "57ec385202f4f4c76a043cb75fe2187a011e64360120baaaaafc2ed9857f4a49",
+      "page_bytes": 144071
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 43,
+  "open_candidate_count": 0,
+  "candidate_links": [
+    {
+      "title": "2025년 OTT특화 콘텐츠 제작지원(IP확보형_드라마) 추가공모",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=196477&menuNo=200104&pageIndex=3",
+      "period_start": "2025-10-02",
+      "period_end": "2025-10-21",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "2026년 ARKO사업 연계 해외진출지원",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=195322&menuNo=200104&pageIndex=3",
+      "period_start": "2025-09-04",
+      "period_end": "2025-10-21",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "[수정공고] 2025년 OTT특화 콘텐츠 제작지원(IP확보형_드라마) 추가공모",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=196698&menuNo=200104&pageIndex=2",
+      "period_start": "2025-10-02",
+      "period_end": "2025-10-23",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(드라마 장편 부문)",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=207745&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(드라마 중단편 부문)",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=207744&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(선도형) 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=209441&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-02-19",
+      "period_end": "2026-03-06",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(협력형) 수요기업 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=209731&menuNo=200104&sSort=2&pageIndex=1",
+      "period_start": "2026-02-23",
+      "period_end": "2026-03-09",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026년 한국문학 해외진출 패키지 지원사업 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=207799&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-02-23",
+      "period_end": "2026-03-09",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2026 만화웹툰 번역 등 해외진출 지원(공급기업) 모집",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=209828&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-02-27",
+      "period_end": "2026-03-18",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "만화"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(협력형) 수행기업 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=213120&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-03-18",
+      "period_end": "2026-04-02",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[추가모집] 2026년 인공지능 콘텐츠 제작지원(협력형) 수요기업 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=215876&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-03-27",
+      "period_end": "2026-04-02",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026 만화웹툰 번역 등 해외진출 지원(수요기업) 1차 모집",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=214573&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-03-26",
+      "period_end": "2026-04-14",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026 충북콘텐츠코리아랩 [스토리 IP 제작지원] 웹툰 및 캐릭터 지원사업 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=213630&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-04-01",
+      "period_end": "2026-04-20",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "「2026년 과학관 인공지능(AI) 교육 교사연구회」모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=216014&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-04-01",
+      "period_end": "2026-04-20",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026년 러시아 만화웹툰 비즈니스 상담회 참가기업 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=217971&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-04-10",
+      "period_end": "2026-04-24",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(협력형) 수행기업 추가모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=218406&menuNo=200104&sSort=2&pageIndex=1",
+      "period_start": "2026-04-14",
+      "period_end": "2026-04-29",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[재공고] 2026년 인공지능 콘텐츠 제작지원(협력형) 수행기업 모집 공고(1개기업)",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=219577&menuNo=200104&sSort=2&pageIndex=1",
+      "period_start": "2026-04-27",
+      "period_end": "2026-05-06",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[재공고] 2026년 인공지능 콘텐츠 제작지원(진입형) 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=219679&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-04-29",
+      "period_end": "2026-05-08",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026 웹툰 연재작품 보조작가 지원사업 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=219884&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-04-30",
+      "period_end": "2026-05-15",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026년 방송영상 기획취재 지원사업(2차) 공모(~5.19. 14시)",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=219822&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-04-30",
+      "period_end": "2026-05-19",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "영상"
+    },
+    {
+      "title": "2026 경남웹툰캠퍼스 입주작가 창작 장비 지원 상반기 모집공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=220804&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-05-07",
+      "period_end": "2026-05-20",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026 충북콘텐츠코리아랩 [스토리 IP 제작지원] 사업 웹툰 분야 추가 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=220318&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-04-29",
+      "period_end": "2026-05-26",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026년 글로벌 웹툰 IP 제작지원 추가 모집",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=221175&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-05-22",
+      "period_end": "2026-06-05",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(협력형) 수행기업 2차 추가모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=221614&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-05-27",
+      "period_end": "2026-06-10",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "제4회 문화체육관광 인공지능 데이터 활용 공모전",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=220520&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-04-27",
+      "period_end": "2026-06-26",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026 만화웹툰 번역 등 해외진출 지원(수요기업) 2차 모집",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=222784&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-06-17",
+      "period_end": "2026-07-03",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(드라마/장편 부문)_재공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=223260&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-06-29",
+      "period_end": "2026-07-06",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "영상"
+    },
+    {
+      "title": "2026년 하반기 화성시미디어센터 「AI 영상제작 프로젝트」참여자 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=222822&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-06-22",
+      "period_end": "2026-07-08",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "영상"
+    },
+    {
+      "title": "2026 원주만두축제 AI 영상 공모전 참가자 모집",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=223254&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-06-22",
+      "period_end": "2026-07-23",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "영상"
+    },
+    {
+      "title": "한일축제한마당 2026 숏폼 영상 공모전",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=225372&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-06-05",
+      "period_end": "2026-07-24",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "영상"
+    },
+    {
+      "title": "2026 충북콘텐츠코리아랩 [스토리 인 충북 영상 제작지원] 사업 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=223562&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-06-18",
+      "period_end": "2026-07-27",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "영상"
+    },
+    {
+      "title": "2026 공예 해외진출 컨설팅 하반기 기초교육 참여자 모집",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226584&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-07-29",
+      "period_end": "2026-08-04",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2026 충북콘텐츠코리아랩 [장비 마스터링] 생성형 AI를 활용한 상품개발 굿즈 제작 기본과정 수강생 모집공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226582&menuNo=200104&sSort=2&pageIndex=1",
+      "period_start": "2026-07-29",
+      "period_end": "2026-08-12",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 충북콘텐츠코리아랩 [스타트업 오피스] 신규 입주자 모집",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226237&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-07-24",
+      "period_end": "2026-08-14",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 콘텐츠IP 마켓 참가기업 모집",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=225169&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-07-15",
+      "period_end": "2026-08-19",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 충북콘텐츠코리아랩-재담미디어 [웹툰런 인 충북] 모집 안내",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=225938&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-07-20",
+      "period_end": "2026-08-20",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 광주지역 대표 공연 콘텐츠 유통 활성화 지원 공모 안내",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226837&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-08-03",
+      "period_end": "2026-08-20",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 공예 해외진출 컨설팅 참가사 추가 모집공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226836&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-08-04",
+      "period_end": "2026-08-25",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2026 경남콘텐츠코리아랩 콘텐츠 창작스쿨 프로그램 웹툰 및 웹소설 체험 교육생 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=227896&menuNo=200104&sSort=2&pageIndex=3",
+      "period_start": "2026-08-19",
+      "period_end": "2026-08-28",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 대한민국 콘텐츠대상(만화) 정부시상 후보작 추천 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226789&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-07-31",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 대한민국 콘텐츠대상(애니메이션) 국민심사위원 모집 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226791&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-07-31",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 대한민국 콘텐츠대상(애니메이션) 정부시상 후보작 추천 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226793&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-07-31",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 대한민국 콘텐츠대상(캐릭터 부문) 정부시상 후보작 추천 공고",
+      "url": "https://www.culture.go.kr/portal/cltBnf/cltSup/view.do?viewTp=2&rcrtSn=226790&menuNo=200104&sSort=2&pageIndex=2",
+      "period_start": "2026-07-31",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    }
+  ]
+}

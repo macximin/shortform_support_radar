@@ -11,15 +11,33 @@ The registry intentionally excludes e-Naradoum from crawling. It is an applicati
 and subsidy-execution system, so it is a human-led procedural route only after a
 specific notice has been selected.
 
+A board that publishes thousands of notices is queried through its own search
+index rather than scraped page by page. `mcst_culture_support` carries a `search`
+block for this reason: its list page holds 3,383 notices across 339 date-sorted
+pages, so page one is almost never a content call.
+
 ## Run a bounded public canary
 
 ```bash
 python3 tools/collect_public_notices.py validate
-python3 tools/collect_public_notices.py collect --source kocca_pims_support --out evidence/2026-09-01/canary
+python3 tools/collect_public_notices.py collect --source all --out evidence/2026-09-01/canary
 ```
 
-Each receipt records a page hash and candidate links only; it does not store HTML,
-session state, credentials, applicant data, or application documents.
+Compare two runs to see what opened and what fell off the board:
+
+```bash
+python3 tools/collect_public_notices.py diff --previous evidence/2026-09-01/canary --current evidence/2026-09-08/canary
+```
+
+Each receipt records per-fetch page hashes and candidate rows only; it does not
+store HTML, session state, credentials, applicant data, or application documents.
+A candidate carries the `period_start`, `period_end`, and `status_label` the board
+already publishes, plus `open_on_observation` computed against the collection date.
+`open_on_observation` restates the board's own dates and is not an eligibility
+finding.
+
+A page hash cannot answer "what changed": view counters and session tokens move it
+on every fetch. Use `diff`, which compares candidate sets.
 
 AI 숏드라마와 Lezhin Snack IP 사업에 관련된 공개 지원사업을 **후보 단계**에서 수집·검증하는 private repository다.
 
@@ -28,6 +46,16 @@ AI 숏드라마와 Lezhin Snack IP 사업에 관련된 공개 지원사업을 **
 - KOCCA, WelCon, KOCCA PMS의 공개 공고 및 첨부문서
 - KOFIC, KOTRA, 지역 콘텐츠진흥원, Bizinfo 등 공공·공식 보조 소스
 - AI 제작, 방송영상·숏드라마, 웹툰 IP, 해외진출 지원사업
+
+### 등록 현황과 미등록 구간
+
+선언된 범위와 `config/sources.json`의 실제 등록분은 아직 일치하지 않는다.
+
+- 지역 콘텐츠진흥원(경남·충북 콘텐츠코리아랩 등)은 MCST 문화지원사업 통합 색인이 기관 공고를
+  모아 싣기 때문에 `mcst_culture_support` 검색을 통해 간접 수집된다. 별도 소스가 아니다.
+- KOFIC, KOTRA는 미등록이다. 범위 문장이 곧 수집 근거는 아니므로, 필요해지면 소스로 등록한 뒤에
+  수집 대상이라고 기술한다.
+- 공고 첨부문서는 수집하지 않는다. 현재 도구는 목록 행만 읽는다.
 
 ## 운영 경계
 

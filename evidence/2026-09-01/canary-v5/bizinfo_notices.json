@@ -1,0 +1,74 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v2",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "bizinfo_notices",
+    "publisher": "K-Startup Business Information",
+    "category": "government_support_announcement_index",
+    "authority": "government_index",
+    "url": "https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/list.do"
+  },
+  "observed_at": "2026-09-01T00:58:41+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "list_page",
+  "fetches": [
+    {
+      "query": null,
+      "requested_url": "https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/list.do",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?null",
+      "http_status": 200,
+      "page_sha256": "7188e336d047896c08b6d581abfbe6a3a946e43c7704b41e5cfa0e0a746bdd1f",
+      "page_bytes": 111888
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 3,
+  "open_candidate_count": 3,
+  "candidate_links": [
+    {
+      "title": "[전남광주] 순천시 2026년 글로벌 IP 창ㆍ제작 지원사업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=&rows=15&cpage=&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=&condition1=&keyword=&pblancId=PBLN_000000000125979",
+      "period_start": "2026-08-25",
+      "period_end": "2026-09-09",
+      "status_label": null,
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "[경기] 2026년 AI 클러스터 글로벌 프로그램(유럽) 2026 SLUSH 참가기업 모집 공고(경기도 AI 혁신클러스터 조성 사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=&rows=15&cpage=&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=&condition1=&keyword=&pblancId=PBLN_000000000125977",
+      "period_start": "2026-08-28",
+      "period_end": "2026-09-11",
+      "status_label": null,
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "중소제조 특화 Multi AI Agent 개발(R&D) 점프업 Track 시행계획 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=&rows=15&cpage=&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=&condition1=&keyword=&pblancId=PBLN_000000000125978",
+      "period_start": "2026-10-01",
+      "period_end": "2026-10-30",
+      "status_label": null,
+      "open_on_observation": true,
+      "matched_query": null
+    }
+  ]
+}
