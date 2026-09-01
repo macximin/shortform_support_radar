@@ -10,6 +10,7 @@ from __future__ import annotations
 from html.parser import HTMLParser
 
 from .notice import (
+    MIN_TITLE_LENGTH,
     Candidate,
     NoticePeriod,
     carries_notice_metadata,
@@ -75,7 +76,20 @@ def _best_anchor(row: dict) -> dict | None:
     return max(linked, key=lambda anchor: len(anchor["text"] or anchor["title"]))
 
 
-def read_candidates(page: str, base_url: PublicUrl, matched_query: str | None = None) -> list[Candidate]:
+def read_candidates(
+    page: str,
+    base_url: PublicUrl,
+    matched_query: str | None = None,
+    all_rows_in_scope: bool = False,
+    search_param_names: frozenset[str] = frozenset(),
+) -> list[Candidate]:
+    """Read notice rows.
+
+    `all_rows_in_scope` is for a board whose every row is already a notice this
+    radar wants - a content agency's own programme list. Applying the discovery
+    vocabulary there subtracts rather than filters: WelCon's event board lost
+    콘텐츠IP 마켓 and ATF 애니메이션 to it.
+    """
     parser = RowCollector()
     parser.feed(page)
     candidates: list[Candidate] = []
@@ -85,7 +99,10 @@ def read_candidates(page: str, base_url: PublicUrl, matched_query: str | None = 
         if anchor is None:
             continue
         title = anchor["text"] or anchor["title"]
-        if not looks_like_notice_title(title):
+        if all_rows_in_scope:
+            if len(title) < MIN_TITLE_LENGTH:
+                continue
+        elif not looks_like_notice_title(title):
             continue
         url = base_url.join(anchor["href"])
         if url is None:
@@ -93,12 +110,16 @@ def read_candidates(page: str, base_url: PublicUrl, matched_query: str | None = 
         row_text = normalize_text(" ".join(row["texts"]))
         if not carries_notice_metadata(row_text):
             continue
+        identity = url.without_params_named(search_param_names) if search_param_names else url
+        if matched_query:
+            identity = identity.without_params_valued({matched_query})
         candidate = Candidate(
             title=title[:500],
             url=url,
             period=NoticePeriod.parse(row_text),
             status_label=find_status_label(row_text),
             matched_query=matched_query,
+            identity_url=identity,
         )
         if candidate.key() in seen:
             continue

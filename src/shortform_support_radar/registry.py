@@ -29,6 +29,12 @@ class SearchPlan:
     extra_params: dict[str, str] = field(default_factory=dict)
     pages: int = 1
     page_param: str | None = None
+    probe: bool = False
+    """A probe widens the net into an adjacent board with words that are not
+    themselves in scope; the discovery vocabulary still screens what comes back.
+    A non-probe query names a topic, and every such word must exist in the
+    vocabulary - querying for 만화 and then dropping the result for not saying
+    웹툰 loses exactly what was searched for."""
 
     def urls_for(self, base: PublicUrl) -> list[tuple[str, PublicUrl]]:
         pairs: list[tuple[str, PublicUrl]] = []
@@ -43,24 +49,53 @@ class SearchPlan:
 
 @dataclass(frozen=True)
 class Source:
-    """One registered public board."""
+    """One registered public board.
+
+    A board may need more than one search axis: Bizinfo indexes by programme name
+    and by the body running it, and a content agency's whole output is in scope
+    whether or not its titles carry the vocabulary.
+    """
 
     id: str
     url: PublicUrl
     publisher: str | None = None
     category: str | None = None
     authority: str | None = None
-    search: SearchPlan | None = None
+    searches: tuple[SearchPlan, ...] = ()
+    all_rows_in_scope: bool = False
+
+    @property
+    def search_param_names(self) -> frozenset[str]:
+        """Every query parameter this source's searches inject.
+
+        A board echoes them into its detail links, so the same notice reached by
+        two axes carries two URLs. Stripping them restores one identity.
+        """
+        names: set[str] = set()
+        for plan in self.searches:
+            names.add(plan.param)
+            if plan.page_param:
+                names.add(plan.page_param)
+            names.update(plan.extra_params)
+        return frozenset(names)
 
     @property
     def search_mode(self) -> str:
-        return "server_side_query" if self.search else "list_page"
+        return "server_side_query" if self.searches else "list_page"
 
     def requests(self) -> list[tuple[str | None, PublicUrl]]:
         """Return (query, url) pairs to fetch for this source."""
-        if self.search is None:
+        if not self.searches:
             return [(None, self.url)]
-        return list(self.search.urls_for(self.url))
+        pairs: list[tuple[str | None, PublicUrl]] = []
+        seen: set[str] = set()
+        for plan in self.searches:
+            for query, url in plan.urls_for(self.url):
+                if str(url) in seen:
+                    continue
+                seen.add(str(url))
+                pairs.append((query, url))
+        return pairs
 
     def to_json(self) -> dict:
         return {
@@ -103,6 +138,11 @@ def _read_search(source_id: str, raw: object, errors: list[str]) -> SearchPlan |
     if pages is None:
         errors.append(f"search.pages must be an integer >= 1: {source_id}")
 
+    raw_probe = raw.get("probe", False)
+    probe: bool | None = raw_probe if isinstance(raw_probe, bool) else None
+    if probe is None:
+        errors.append(f"search.probe must be a boolean: {source_id}")
+
     raw_page_param = raw.get("pageParam")
     page_param: str | None = raw_page_param if isinstance(raw_page_param, str) and raw_page_param else None
     if raw_page_param is not None and page_param is None:
@@ -113,9 +153,28 @@ def _read_search(source_id: str, raw: object, errors: list[str]) -> SearchPlan |
 
     # Every check runs before the bail-out so validate reports the whole problem,
     # not just the first field that failed.
-    if param is None or queries is None or extra is None or pages is None:
+    if param is None or queries is None or extra is None or pages is None or probe is None:
         return None
-    return SearchPlan(param=param, queries=queries, extra_params=extra, pages=pages, page_param=page_param)
+    return SearchPlan(
+        param=param, queries=queries, extra_params=extra, pages=pages, page_param=page_param, probe=probe
+    )
+
+
+def _read_searches(source_id: str, raw: dict, errors: list[str]) -> tuple[SearchPlan, ...]:
+    """Read `search` (one plan) or `searches` (several). They are mutually exclusive."""
+    single = raw.get("search")
+    many = raw.get("searches")
+    if single is not None and many is not None:
+        errors.append(f"declare either search or searches, not both: {source_id}")
+        return ()
+    if many is not None:
+        if not isinstance(many, list) or not many:
+            errors.append(f"searches must be a non-empty list: {source_id}")
+            return ()
+        plans = [_read_search(source_id, item, errors) for item in many]
+        return tuple(plan for plan in plans if plan is not None)
+    plan = _read_search(source_id, single, errors)
+    return (plan,) if plan is not None else ()
 
 
 def read_registry(document: dict) -> tuple[list[Source], list[str]]:
@@ -144,7 +203,11 @@ def read_registry(document: dict) -> tuple[list[Source], list[str]]:
             errors.append(f"source URL must be public HTTPS without credentials: {source_id}")
         if raw.get("enabled") is not True:
             errors.append(f"source must explicitly set enabled=true: {source_id}")
-        search = _read_search(source_id, raw.get("search"), errors)
+        searches = _read_searches(source_id, raw, errors)
+        raw_scope = raw.get("allRowsInScope", False)
+        if not isinstance(raw_scope, bool):
+            errors.append(f"allRowsInScope must be a boolean: {source_id}")
+            raw_scope = False
         if url is None:
             continue
         sources.append(
@@ -154,7 +217,8 @@ def read_registry(document: dict) -> tuple[list[Source], list[str]]:
                 publisher=raw.get("publisher"),
                 category=raw.get("category"),
                 authority=raw.get("authority"),
-                search=search,
+                searches=searches,
+                all_rows_in_scope=raw_scope,
             )
         )
     return sources, errors

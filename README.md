@@ -3,6 +3,8 @@
 ## Current public source coverage
 
 - KOCCA PIMS open programs (`kocca_pims_open`)
+- KOFIC business notices, probed by keyword (`kofic_business_notices`) - a watch;
+  its list carries no 모집기간, so read it with `diff`, not `period_state`
 - KOCCA PIMS `종료된사업` archive, queried by keyword (`kocca_pims_archive`)
 - WelCon / KOCCA export-event announcements
 - MCST culture-support announcement index, queried by keyword
@@ -23,6 +25,20 @@ index rather than scraped page by page. `mcst_culture_support` (3,383 notices) a
 `kocca_pims_archive` (2,115) both carry a `search` block for this reason: on a
 date-sorted list, page one is almost never a content call. `search.pages` widens
 the window where a board's posting rate can push a still-open notice off page one.
+
+A board may carry more than one search axis. Bizinfo indexes by programme name and
+by the body running it, and anything KOCCA runs is in scope by the body whatever its
+title says.
+
+`allRowsInScope` marks a board whose every row is already in scope, and skips the
+discovery vocabulary there. On WelCon's event list the vocabulary dropped 9 of 10
+rows, 콘텐츠IP 마켓 and ATF 애니메이션 among them. A row still needs a date or a
+recruitment state, so navigation stays out. Broad indexes keep the vocabulary.
+
+Every non-probe query word must exist in the filter vocabulary, and a test enforces
+it: querying a board for 만화 and then dropping the result for not saying 웹툰 loses
+exactly what was searched for. A `probe` plan is exempt - it widens the net into an
+adjacent board with words that are not themselves in scope.
 
 Requests are paced per host across the whole run, so two sources sharing a board
 do not fire back to back.

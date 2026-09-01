@@ -103,7 +103,13 @@ def collect(source: Source, observed_on: dt.date | None = None, limiter: HostRat
                 page_bytes=len(body),
             )
         )
-        for candidate in read_candidates(page, final_url, matched_query=query):
+        for candidate in read_candidates(
+            page,
+            final_url,
+            matched_query=query,
+            all_rows_in_scope=source.all_rows_in_scope,
+            search_param_names=source.search_param_names,
+        ):
             if candidate.key() in seen:
                 continue
             seen.add(candidate.key())

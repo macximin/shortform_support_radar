@@ -14,10 +14,12 @@ from dataclasses import dataclass
 
 from .policy import PublicUrl
 
+# The filter vocabulary and the registry's query vocabulary must agree: querying a
+# board for 만화 and then dropping the result for not saying 웹툰 loses real notices.
 KEYWORDS = (
     "인공지능", "ai", "생성형", "방송영상", "드라마", "숏드라마", "숏폼",
-    "웹툰", "webtoon", "ip", "지식재산", "콘텐츠", "해외진출", "수출",
-    "제작지원", "제작 지원",
+    "웹툰", "webtoon", "만화", "애니메이션", "ip", "지식재산", "콘텐츠",
+    "해외진출", "수출", "제작지원", "제작 지원",
 )
 NOTICE_SIGNALS = ("공고", "모집", "지원", "사업", "참가", "쇼케이스", "공모")
 STATUS_LABELS = ("모집중", "접수중", "진행중", "접수예정", "모집예정", "마감", "종료", "상시")
@@ -126,11 +128,11 @@ class Candidate:
     period: NoticePeriod
     status_label: str | None = None
     matched_query: str | None = None
+    identity_url: PublicUrl | None = None
 
     def key(self) -> tuple[str, str]:
         """Identity of the notice, not of the search path that reached it."""
-        url = self.url.without_params_valued({self.matched_query}) if self.matched_query else self.url
-        return (self.title, str(url))
+        return (self.title, str(self.identity_url or self.url))
 
     def to_json(self, observed_on: dt.date) -> dict:
         return {

@@ -32,6 +32,7 @@ from shortform_support_radar.policy import (  # noqa: E402
 from shortform_support_radar.collection import HostRateLimiter  # noqa: E402
 from shortform_support_radar.receipts import diff_documents  # noqa: E402
 from shortform_support_radar.registry import REGISTRY_SCHEMA, load_registry, read_registry  # noqa: E402
+from shortform_support_radar.notice import KEYWORDS  # noqa: E402
 
 OBSERVED_ON = dt.date(2026, 9, 1)
 BASE = PublicUrl("https://example.go.kr/list")
@@ -117,6 +118,26 @@ class NoticeDomainTests(unittest.TestCase):
         self.assertEqual(find_status_label("미국 모집중 2027 콘텐츠"), "모집중")
         self.assertIsNone(find_status_label("일반 안내"))
 
+    def test_filter_vocabulary_covers_every_registry_query(self):
+        # Querying a board for a word the filter then rejects loses real notices.
+        sources, errors = load_registry(ROOT / "config" / "sources.json")
+        self.assertEqual(errors, [])
+        lowered = {k.lower() for k in KEYWORDS}
+        for source in sources:
+            if source.all_rows_in_scope:
+                continue
+            for plan in source.searches:
+                if plan.probe:
+                    continue  # a probe deliberately searches outside the vocabulary
+                for query in plan.queries:
+                    if query.endswith("진흥원") or query.endswith("공사"):
+                        continue  # an agency axis names a body, not a topic
+                    with self.subTest(source=source.id, query=query):
+                        self.assertTrue(
+                            any(k in query.lower() or query.lower() in k for k in lowered),
+                            f"{source.id} queries {query!r} but the filter vocabulary cannot match it",
+                        )
+
     def test_strip_badges(self):
         self.assertEqual(strip_badges("새글 공지 2026 지원사업"), "2026 지원사업")
         self.assertEqual(strip_badges("2026 지원사업"), "2026 지원사업")
@@ -176,6 +197,37 @@ class BoardReadingTests(unittest.TestCase):
         first = read_candidates(row.format(href="/d?pblancId=PBLN_1&keyword=콘텐츠"), BASE, matched_query="콘텐츠")[0]
         other = read_candidates(row.format(href="/d?pblancId=PBLN_2&keyword=콘텐츠"), BASE, matched_query="콘텐츠")[0]
         self.assertNotEqual(first.key(), other.key())
+
+    def test_the_same_notice_found_by_two_axes_is_one_candidate(self):
+        # Bizinfo echoes both the search field and the term into its detail link,
+        # so a title hit and an agency hit on one notice differ by two params.
+        row = '<table><tbody><tr><td><a href="{href}">2026 ATF 애니메이션 참가기업 모집 공고</a></td><td>2026-09-01 ~ 2026-09-30</td></tr></tbody></table>'
+        names = frozenset({"condition", "keyword"})
+        by_title = read_candidates(
+            row.format(href="/d?pblancId=P1&condition=searchPblancNm&keyword=애니메이션"),
+            BASE, matched_query="애니메이션", search_param_names=names,
+        )[0]
+        by_agency = read_candidates(
+            row.format(href="/d?pblancId=P1&condition=searchExcInsttNm&keyword=한국콘텐츠진흥원"),
+            BASE, matched_query="한국콘텐츠진흥원", search_param_names=names,
+        )[0]
+        self.assertEqual(by_title.key(), by_agency.key())
+        self.assertNotEqual(str(by_title.url), str(by_agency.url))
+
+    def test_board_scoped_source_keeps_rows_the_vocabulary_would_drop(self):
+        page = """
+        <ul>
+          <li><a href="/e/1">2026 콘텐츠IP 마켓</a><span>2026-09-01 ~ 2026-09-30</span></li>
+          <li><a href="/e/2">아시아 TV 포럼 &amp; 마켓</a><span>2026-09-01 ~ 2026-09-30</span></li>
+        </ul>
+        """
+        self.assertEqual(read_candidates(page, BASE), [])
+        scoped = read_candidates(page, BASE, all_rows_in_scope=True)
+        self.assertEqual([c.title for c in scoped], ["2026 콘텐츠IP 마켓", "아시아 TV 포럼 & 마켓"])
+
+    def test_board_scope_still_requires_notice_metadata(self):
+        page = '<ul><li><a href="/nav">지역콘텐츠기업지원센터</a></li></ul>'
+        self.assertEqual(read_candidates(page, BASE, all_rows_in_scope=True), [])
 
     def test_records_the_query_that_surfaced_the_row(self):
         page = (

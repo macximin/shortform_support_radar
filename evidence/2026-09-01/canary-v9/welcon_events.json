@@ -1,0 +1,149 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v3",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "welcon_events",
+    "publisher": "WelCon / KOCCA",
+    "category": "export_event_announcement",
+    "authority": "primary",
+    "url": "https://welcon.kocca.kr/ko/event/all"
+  },
+  "observed_at": "2026-09-01T02:36:52+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "list_page",
+  "fetches": [
+    {
+      "query": null,
+      "requested_url": "https://welcon.kocca.kr/ko/event/all",
+      "final_url": "https://welcon.kocca.kr/ko/event/all",
+      "http_status": 200,
+      "page_sha256": "e7e458d0cb06da673b0cc5a393b1baf8a1d8258051fd6db317bed15b268fd16f",
+      "page_bytes": 165407
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "만화",
+    "애니메이션",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 10,
+  "open_candidate_count": 3,
+  "candidate_links": [
+    {
+      "title": "2026 론치패드 UAE 참가기업 추가모집",
+      "url": "https://welcon.kocca.kr/ko/event/launchpad-2026-in-uae--569",
+      "period_start": "2026-07-15",
+      "period_end": "2026-07-27",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": null
+    },
+    {
+      "title": "2026 론치패드 싱가포르 참가기업 추가모집",
+      "url": "https://welcon.kocca.kr/ko/event/launchpad-2026-in-singapore--570",
+      "period_start": "2026-07-15",
+      "period_end": "2026-07-27",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": null
+    },
+    {
+      "title": "한중 문화 및 푸드 교류 페스티벌",
+      "url": "https://welcon.kocca.kr/ko/event/koreachina-cultural-food-exchange-festival--572",
+      "period_start": "2026-08-03",
+      "period_end": "2026-08-18",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": null
+    },
+    {
+      "title": "2026 콘텐츠IP 마켓",
+      "url": "https://welcon.kocca.kr/ko/event/content-ip-market-2026--571",
+      "period_start": "2026-07-15",
+      "period_end": "2026-08-19",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": null
+    },
+    {
+      "title": "2026 게이밍이스탄불",
+      "url": "https://welcon.kocca.kr/ko/event/gaming-istanbul-2026--574",
+      "period_start": "2026-08-06",
+      "period_end": "2026-08-20",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": null
+    },
+    {
+      "title": "2026 한태 K-콘텐츠 비즈위크(2차)",
+      "url": "https://welcon.kocca.kr/ko/event/2026-koreathai-kcontents-bizweek--573",
+      "period_start": "2026-08-05",
+      "period_end": "2026-08-25",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": null
+    },
+    {
+      "title": "2026 KOMICS Thailand",
+      "url": "https://welcon.kocca.kr/ko/event/2026-komics-thailand--575",
+      "period_start": "2026-08-13",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": null
+    },
+    {
+      "title": "K-브랜드 홍보·판촉 마켓 참가기업 모집 추가공고",
+      "url": "https://welcon.kocca.kr/ko/event/koreachina-cultural-food-exchange-festival--577",
+      "period_start": "2026-08-26",
+      "period_end": "2026-09-07",
+      "status_label": "모집중",
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "아시아 TV 포럼 & 마켓 (애니메이션)",
+      "url": "https://welcon.kocca.kr/ko/event/2026-atfasia-tv-forum-market--576",
+      "period_start": "2026-08-25",
+      "period_end": "2026-09-08",
+      "status_label": "모집중",
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "2027 콘텐츠 아메리카 한국공동관 및 쇼케이스 참가기업 모집",
+      "url": "https://welcon.kocca.kr/ko/event/content-americas-2027--578",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-21",
+      "status_label": "모집중",
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    }
+  ]
+}
