@@ -56,6 +56,17 @@ class PublicUrl:
         merged.update(params)
         return PublicUrl(urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(merged), parts.fragment)))
 
+    def without_params_valued(self, values: set[str]) -> "PublicUrl":
+        """Drop query params carrying one of these values.
+
+        A board echoes the search term into the detail link, so the same notice
+        reached by two queries yields two URLs. Dropping the echoed term restores
+        one identity per notice.
+        """
+        parts = urlsplit(self.value)
+        kept = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True) if v not in values]
+        return PublicUrl(urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(kept), parts.fragment)))
+
     def __str__(self) -> str:
         return self.value
 

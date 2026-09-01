@@ -128,7 +128,9 @@ class Candidate:
     matched_query: str | None = None
 
     def key(self) -> tuple[str, str]:
-        return (self.title, str(self.url))
+        """Identity of the notice, not of the search path that reached it."""
+        url = self.url.without_params_valued({self.matched_query}) if self.matched_query else self.url
+        return (self.title, str(url))
 
     def to_json(self, observed_on: dt.date) -> dict:
         return {

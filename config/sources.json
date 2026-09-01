@@ -72,9 +72,31 @@
       "id": "bizinfo_notices",
       "publisher": "K-Startup Business Information",
       "category": "government_support_announcement_index",
-      "url": "https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/list.do",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do",
       "authority": "government_index",
-      "enabled": true
+      "enabled": true,
+      "search": {
+        "param": "keyword",
+        "pageParam": "cpage",
+        "extraParams": {
+          "condition": "searchPblancNm",
+          "condition1": "AND",
+          "schEndAt": "N",
+          "rowsSel": "6",
+          "rows": "15",
+          "cpage": "1"
+        },
+        "queries": [
+          "콘텐츠",
+          "웹툰",
+          "만화",
+          "영상",
+          "드라마",
+          "애니메이션",
+          "인공지능",
+          "해외진출"
+        ]
+      }
     }
   ],
   "excluded": [
@@ -89,6 +111,15 @@
     {
       "name": "MOEF (mofe.go.kr) and MCST portal main",
       "reason": "Budget, tax, and cross-sector ministry news. Content calls are executed through KOCCA and the MCST culture-support index already registered here."
+    },
+    {
+      "name": "KOFIC (영화진흥위원회)",
+      "reason": "Its business board carries only 영화 programs - 기획개발지원, 독립예술영화, 중예산 한국영화, 국제공동제작영화, 첨단제작. A title search for 인공지능, AI, or 숏폼 returns no notice, and KOFIC does not feed Bizinfo. Vertical short drama is not 영화 under its mandate, so nothing here reaches this radar's scope."
+    },
+    {
+      "name": "KOTRA (대한무역투자진흥공사) direct board",
+      "reason": "Its programs are published through Bizinfo, which is registered here, so a separate source would duplicate them. The programs themselves are trade fairs and export services rather than content production calls."
     }
-  ]
+  ],
+  "aggregatorNote": "Bizinfo aggregates KOCCA, KOTRA, and the regional content agencies (부산정보산업진흥원, 세종테크노파크, 대구디지털혁신진흥원, 경기콘텐츠진흥원, 전남정보문화산업진흥원 and others). Registering it with a search covers those bodies without a source each. KOFIC does not feed it, and is excluded on its own grounds."
 }

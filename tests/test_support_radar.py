@@ -162,6 +162,21 @@ class BoardReadingTests(unittest.TestCase):
         """
         self.assertEqual([c.title for c in read_candidates(page, BASE)], ["2026 웹툰 IP 제작지원 모집"])
 
+    def test_the_same_notice_found_by_two_queries_is_one_candidate(self):
+        # A board echoes the search term into the detail link, so the two URLs
+        # differ only by the term that reached them.
+        row = '<table><tbody><tr><td><a href="{href}">2026 웹툰 콘텐츠 제작지원 공고</a></td><td>2026-09-01 ~ 2026-09-30</td></tr></tbody></table>'
+        first = read_candidates(row.format(href="/d?pblancId=PBLN_1&keyword=콘텐츠"), BASE, matched_query="콘텐츠")[0]
+        second = read_candidates(row.format(href="/d?pblancId=PBLN_1&keyword=웹툰"), BASE, matched_query="웹툰")[0]
+        self.assertEqual(first.key(), second.key())
+        self.assertNotEqual(str(first.url), str(second.url))
+
+    def test_distinct_notices_keep_distinct_identities(self):
+        row = '<table><tbody><tr><td><a href="{href}">2026 웹툰 콘텐츠 제작지원 공고</a></td><td>2026-09-01 ~ 2026-09-30</td></tr></tbody></table>'
+        first = read_candidates(row.format(href="/d?pblancId=PBLN_1&keyword=콘텐츠"), BASE, matched_query="콘텐츠")[0]
+        other = read_candidates(row.format(href="/d?pblancId=PBLN_2&keyword=콘텐츠"), BASE, matched_query="콘텐츠")[0]
+        self.assertNotEqual(first.key(), other.key())
+
     def test_records_the_query_that_surfaced_the_row(self):
         page = (
             '<table><tbody><tr><td><a href="/n/1">2026 웹툰 IP 제작지원 모집</a></td>'

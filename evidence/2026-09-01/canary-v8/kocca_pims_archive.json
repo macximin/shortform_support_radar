@@ -1,0 +1,675 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v3",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "kocca_pims_archive",
+    "publisher": "Korea Creative Content Agency (KOCCA)",
+    "category": "direct_support_announcement_archive",
+    "authority": "primary",
+    "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4"
+  },
+  "observed_at": "2026-09-01T02:25:09+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "server_side_query",
+  "fetches": [
+    {
+      "query": "콘텐츠",
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%BD%98%ED%85%90%EC%B8%A0",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%BD%98%ED%85%90%EC%B8%A0",
+      "http_status": 200,
+      "page_sha256": "200792793963caf524c4c4197bf8603997f737793186e50cbc030a7fcbc5fb58",
+      "page_bytes": 140822
+    },
+    {
+      "query": "웹툰",
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9B%B9%ED%88%B0",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9B%B9%ED%88%B0",
+      "http_status": 200,
+      "page_sha256": "b18168308e510fc73480891c1ee16812305d6be715366a605677affc82ad458e",
+      "page_bytes": 139582
+    },
+    {
+      "query": "만화",
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%A7%8C%ED%99%94",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%A7%8C%ED%99%94",
+      "http_status": 200,
+      "page_sha256": "327d94d03ae8f68b4eb94fa92f2c4561228fd733b8f4d14e0e39d7f4cb7e1f4e",
+      "page_bytes": 140047
+    },
+    {
+      "query": "방송영상",
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%B0%A9%EC%86%A1%EC%98%81%EC%83%81",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%B0%A9%EC%86%A1%EC%98%81%EC%83%81",
+      "http_status": 200,
+      "page_sha256": "a17323aa70b3ec1da250a60c11a491e9d9f28b00c9fab1c4a5c2c13a567fce23",
+      "page_bytes": 140703
+    },
+    {
+      "query": "드라마",
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%93%9C%EB%9D%BC%EB%A7%88",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%93%9C%EB%9D%BC%EB%A7%88",
+      "http_status": 200,
+      "page_sha256": "304142445289b1fe2b0b050905f077670943180ec5e6b9bc89456081f9f5a2b1",
+      "page_bytes": 139609
+    },
+    {
+      "query": "인공지능",
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
+      "http_status": 200,
+      "page_sha256": "c44c678dc6e4210c9592dca2cd618d5fb0091ab1445cf16659e806afc9f2dd68",
+      "page_bytes": 139867
+    },
+    {
+      "query": "해외진출",
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
+      "http_status": 200,
+      "page_sha256": "8445aad7a1b82a4fcc726fd757374d9adbfa8048791609496d7df76e410659df",
+      "page_bytes": 139767
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 58,
+  "open_candidate_count": 0,
+  "candidate_links": [
+    {
+      "title": "2016 해외진출 콘텐츠 샘플번역 지원사업 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=116E501003&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ed%95%b4%ec%99%b8%ec%a7%84%ec%b6%9c",
+      "period_start": "2016-04-18",
+      "period_end": "2016-05-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2016년 광고연계해외진출(바터신디케이션) 재제작지원사업 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=116E601010&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ed%95%b4%ec%99%b8%ec%a7%84%ec%b6%9c",
+      "period_start": "2016-06-15",
+      "period_end": "2016-06-30",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "광고연계해외진출(바터신디케이션) 재제작지원사업 재공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=116E601015&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ed%95%b4%ec%99%b8%ec%a7%84%ec%b6%9c",
+      "period_start": "2016-09-19",
+      "period_end": "2016-09-30",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2019년 콘텐츠 해외진출 현지화 지원 1차 참가기업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=319H241004&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ed%95%b4%ec%99%b8%ec%a7%84%ec%b6%9c",
+      "period_start": "2019-04-26",
+      "period_end": "2019-05-20",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2019년 콘텐츠 해외진출 현지화 지원 2차 참가기업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=319H241009&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ed%95%b4%ec%99%b8%ec%a7%84%ec%b6%9c",
+      "period_start": "2019-07-16",
+      "period_end": "2019-08-06",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2019년 콘텐츠 해외진출 현지화 지원 3차 참가기업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=319H241013&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ed%95%b4%ec%99%b8%ec%a7%84%ec%b6%9c",
+      "period_start": "2019-10-11",
+      "period_end": "2019-10-25",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2021 대중음악 해외진출 온라인 마케팅 지원사업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=321J273004&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ed%95%b4%ec%99%b8%ec%a7%84%ec%b6%9c",
+      "period_start": "2021-04-30",
+      "period_end": "2021-05-17",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "(추가모집) 2022년 방송영상콘텐츠 제작지원(OTT특화 - 드라마)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=122J261011&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%93%9c%eb%9d%bc%eb%a7%88",
+      "period_start": "2022-04-01",
+      "period_end": "2022-04-15",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "[추가 모집] 2022년 방송영상콘텐츠 제작지원(방송-드라마 중편)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=122J261012&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%93%9c%eb%9d%bc%eb%a7%88",
+      "period_start": "2022-05-06",
+      "period_end": "2022-05-20",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "(추가모집) 2023년 OTT특화 방송영상콘텐츠 제작지원(중소제작사_드라마)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=123J261013&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%93%9c%eb%9d%bc%eb%a7%88",
+      "period_start": "2023-06-15",
+      "period_end": "2023-07-03",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "(플랫폼·기타) 2023년 OTT특화 방송영상콘텐츠 제작지원(드라마)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=123J261015&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%93%9c%eb%9d%bc%eb%a7%88",
+      "period_start": "2023-09-05",
+      "period_end": "2023-09-20",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "2025년 방송영상콘텐츠 제작지원(드라마_중단편) 사업 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=125J261004&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%93%9c%eb%9d%bc%eb%a7%88",
+      "period_start": "2025-02-05",
+      "period_end": "2025-02-20",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "2025년 방송영상콘텐츠제작지원(드라마_장편) 사업 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=125J261003&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%93%9c%eb%9d%bc%eb%a7%88",
+      "period_start": "2025-02-05",
+      "period_end": "2025-02-20",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "2025년 다양성만화 제작지원(매니지먼트)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=125D00092002&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%a7%8c%ed%99%94",
+      "period_start": "2025-03-13",
+      "period_end": "2025-03-28",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "만화"
+    },
+    {
+      "title": "2025년 만화웹툰분야 창업기업 육성 지원",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=125D00092003&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%a7%8c%ed%99%94",
+      "period_start": "2025-03-20",
+      "period_end": "2025-04-08",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "만화"
+    },
+    {
+      "title": "2025년 만화·웹툰 수출용 홍보자료(샘플) 제작 지원",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=325D00092011&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%a7%8c%ed%99%94",
+      "period_start": "2025-08-04",
+      "period_end": "2025-08-26",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "만화"
+    },
+    {
+      "title": "2025 대한민국 콘텐츠대상(만화) 정부시상 후보작 추천 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=325D00092008&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%a7%8c%ed%99%94",
+      "period_start": "2025-08-01",
+      "period_end": "2025-09-01",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "만화"
+    },
+    {
+      "title": "[수정공고] 2025년 OTT특화 콘텐츠 제작지원(IP확보형_드라마) 추가공모",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=125D00085007&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%93%9c%eb%9d%bc%eb%a7%88",
+      "period_start": "2025-10-02",
+      "period_end": "2025-10-23",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "[수정공고]2026년 인공지능 게임콘텐츠 제작지원",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00108003&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-02-10",
+      "period_end": "2026-03-03",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(다큐멘터리 부문)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126J261007&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(드라마 장편 부문)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126J261004&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(드라마 중단편 부문)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126J261006&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(예능교양 부문)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126J261003&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(예능교양_포맷 부문)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126J261008&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "2026년 방송영상콘텐츠 확장 지원",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126J261001&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-02-12",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "2026년 방송영상콘텐츠 후반작업지원 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126J261002&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "2026년 중소방송영상제작사 기획안 공모",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00107001&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-02-05",
+      "period_end": "2026-03-04",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "2026 글로벌 웹툰 IP 제작 지원",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00092001&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-02-12",
+      "period_end": "2026-03-05",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(선도형) 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00103001&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-02-19",
+      "period_end": "2026-03-06",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(진입형) 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00103002&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-02-19",
+      "period_end": "2026-03-06",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(협력형) 수요기업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00103003&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-02-23",
+      "period_end": "2026-03-09",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026 웹툰 IP 유통 사업화 지원(월드 웹툰 페스티벌 연계)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00092002&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-02-25",
+      "period_end": "2026-03-16",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "[수정공고] 2026 현지 웹툰 콘텐츠 발굴 지원",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00092003&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-02-26",
+      "period_end": "2026-03-16",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026 만화웹툰 번역 등 해외진출 지원(공급기업) 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00092002&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-02-27",
+      "period_end": "2026-03-18",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(LG채널 오리지널)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00107005&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-03-04",
+      "period_end": "2026-03-26",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "[수정공고] 2026년 인공지능 콘텐츠 제작지원(협력형) 수행기업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=226D00103001&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-03-18",
+      "period_end": "2026-04-02",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[추가모집] 2026년 인공지능 콘텐츠 제작지원(협력형) 수요기업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00103004&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-03-27",
+      "period_end": "2026-04-02",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[수정공고] 2026년 글로벌 웹툰 게임스(웹툰 IP 연계 게임 제작지원)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00070006&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-03-24",
+      "period_end": "2026-04-08",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026 만화웹툰분야 창업기업 육성 지원",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00092004&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-03-25",
+      "period_end": "2026-04-09",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026 만화웹툰 번역 등 해외진출 지원(수요기업) 1차 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00092006&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-03-26",
+      "period_end": "2026-04-14",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026년 러시아 만화웹툰 비즈니스 상담회 참가기업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00089005&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-04-10",
+      "period_end": "2026-04-24",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(협력형) 수행기업 추가모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=226D00103002&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-04-14",
+      "period_end": "2026-04-29",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[재공고] 2026년 인공지능 콘텐츠 제작지원(협력형) 수행기업 모집 공고(1개기업)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=226D00103003&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-04-27",
+      "period_end": "2026-05-06",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[재공고] 2026년 인공지능 콘텐츠 제작지원(진입형_장르 융합) 공고 (1개 과제)",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00103005&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-04-29",
+      "period_end": "2026-05-08",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026년 글로벌 웹툰 IP 제작지원 추가 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=126D00092005&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-05-22",
+      "period_end": "2026-06-05",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026년 인공지능 콘텐츠 제작지원(협력형) 수행기업 2차 추가모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=226D00103004&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5",
+      "period_start": "2026-05-27",
+      "period_end": "2026-06-10",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "2026 만화웹툰 번역 등 해외진출 지원(수요기업) 2차 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00092009&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%9b%b9%ed%88%b0",
+      "period_start": "2026-06-17",
+      "period_end": "2026-07-03",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "웹툰"
+    },
+    {
+      "title": "2026 방송영상콘텐츠제작지원(드라마/장편 부문)_재공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=226D00107001&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%eb%b0%a9%ec%86%a1%ec%98%81%ec%83%81",
+      "period_start": "2026-06-29",
+      "period_end": "2026-07-06",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "방송영상"
+    },
+    {
+      "title": "<2026 대만크리에이티브콘텐츠페스티벌(TCCF) 공동관> 참가기업 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00088005&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-02",
+      "period_end": "2026-07-15",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 두바이국제콘텐츠마켓(DICM) 한국공동관 참가기업 모집공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00085007&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-01",
+      "period_end": "2026-07-16",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 베트남 K-콘텐츠 엑스포 참가기업 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00088004&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-06-24",
+      "period_end": "2026-07-20",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "콘텐츠 해외 투자유치 지원 프로그램 U-KNOCK 2026 in USA 참가기업 모집공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00067005&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-08",
+      "period_end": "2026-07-29",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 두바이국제콘텐츠마켓 참가기업(애니메이션) 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00088007&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-13",
+      "period_end": "2026-07-31",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 콘텐츠IP 마켓 참가기업 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00091012&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-15",
+      "period_end": "2026-08-19",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 대한민국 콘텐츠대상(만화) 정부시상 후보작 추천 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00092010&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-31",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 대한민국 콘텐츠대상(애니메이션) 국민심사위원 모집 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00037012&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-31",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 대한민국 콘텐츠대상(애니메이션) 정부시상 후보작 추천 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00037011&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-31",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026 대한민국 콘텐츠대상(캐릭터 부문) 정부시상 후보작 추천 공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00091013&menuNo=204104&recptSt=&category=4&pageIndex=1&search=01&searchWrd=%ec%bd%98%ed%85%90%ec%b8%a0",
+      "period_start": "2026-07-31",
+      "period_end": "2026-08-31",
+      "status_label": null,
+      "period_state": "closed",
+      "open_on_observation": false,
+      "matched_query": "콘텐츠"
+    }
+  ]
+}

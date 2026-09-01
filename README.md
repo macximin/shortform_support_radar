@@ -6,7 +6,9 @@
 - KOCCA PIMS `종료된사업` archive, queried by keyword (`kocca_pims_archive`)
 - WelCon / KOCCA export-event announcements
 - MCST culture-support announcement index, queried by keyword
-- Bizinfo government-support announcement index
+- Bizinfo government-support index, queried by keyword. It aggregates KOCCA,
+  KOTRA, and the regional content agencies, so those are reached through it
+  rather than registered one by one.
 
 On KOCCA PIMS an absent `category` is the open-programs view and `category=4` is
 the archive of 2,115 ended programs. The two hold disjoint notices, so both are
@@ -83,17 +85,18 @@ AI 숏드라마와 Lezhin Snack IP 사업에 관련된 공개 지원사업을 **
 ## 범위
 
 - KOCCA, WelCon, KOCCA PMS의 공개 공고 및 첨부문서
-- KOFIC, KOTRA, 지역 콘텐츠진흥원, Bizinfo 등 공공·공식 보조 소스
+- KOTRA, 지역 콘텐츠진흥원, Bizinfo 등 공공·공식 보조 소스
 - AI 제작, 방송영상·숏드라마, 웹툰 IP, 해외진출 지원사업
 
 ### 등록 현황과 미등록 구간
 
 선언된 범위와 `config/sources.json`의 실제 등록분은 아직 일치하지 않는다.
 
-- 지역 콘텐츠진흥원(경남·충북 콘텐츠코리아랩 등)은 MCST 문화지원사업 통합 색인이 기관 공고를
-  모아 싣기 때문에 `mcst_culture_support` 검색을 통해 간접 수집된다. 별도 소스가 아니다.
-- KOFIC, KOTRA는 미등록이다. 범위 문장이 곧 수집 근거는 아니므로, 필요해지면 소스로 등록한 뒤에
-  수집 대상이라고 기술한다.
+- 지역 콘텐츠진흥원은 MCST 문화지원사업 색인과 Bizinfo가 기관 공고를 모아 싣기 때문에 두 소스의
+  검색을 통해 수집된다. 별도 소스가 아니다.
+- KOTRA도 Bizinfo를 통해 들어온다. 별도 등록은 중복만 만든다.
+- KOFIC은 제외했다. 사업공지 게시판이 전부 영화 사업이고 `인공지능`·`AI`·`숏폼` 제목 검색에
+  걸리는 공고가 없으며 Bizinfo에도 올라오지 않는다. 근거는 `config/sources.json#excluded`에 있다.
 - 공고 첨부문서는 수집하지 않는다. 현재 도구는 목록 행만 읽는다.
 
 ## 운영 경계
