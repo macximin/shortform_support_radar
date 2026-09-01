@@ -9,7 +9,7 @@
     "authority": "primary",
     "url": "https://welcon.kocca.kr/ko/event/all"
   },
-  "observed_at": "2026-09-01T04:40:56+00:00",
+  "observed_at": "2026-09-01T04:50:46+00:00",
   "observed_on_kst": "2026-09-01",
   "search_mode": "list_page",
   "fetches": [
@@ -18,7 +18,7 @@
       "requested_url": "https://welcon.kocca.kr/ko/event/all",
       "final_url": "https://welcon.kocca.kr/ko/event/all",
       "http_status": 200,
-      "page_sha256": "86eec45b27d586875e8bc3450849dda3597d6b219a06f481c36d25c6640d5296",
+      "page_sha256": "358202330ad0227800327f4cdbd675a07ee3ade0d3944e2236cd37df6438d6ef",
       "page_bytes": 165407
     }
   ],
