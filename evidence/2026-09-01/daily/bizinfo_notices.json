@@ -9,7 +9,7 @@
     "authority": "government_index",
     "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do"
   },
-  "observed_at": "2026-09-01T05:02:39+00:00",
+  "observed_at": "2026-09-01T05:08:21+00:00",
   "observed_on_kst": "2026-09-01",
   "search_mode": "server_side_query",
   "fetches": [
@@ -18,7 +18,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%BD%98%ED%85%90%EC%B8%A0",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%BD%98%ED%85%90%EC%B8%A0",
       "http_status": 200,
-      "page_sha256": "a6e06a239b68fe02d073ff44fa0b3aabebdb5bfbcc858ec51fd91d73c91bbb2a",
+      "page_sha256": "9ee25358957f2dc1858193bd90a6aa98c368db7f974d2585d855d7599c6f969b",
       "page_bytes": 109105
     },
     {
@@ -26,7 +26,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9B%B9%ED%88%B0",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9B%B9%ED%88%B0",
       "http_status": 200,
-      "page_sha256": "f97a71038bd8b20002f0ebb346131a850692d64bd78fced4e33a37b53b908fad",
+      "page_sha256": "cb5cdf0375ed8595b1ba9107da92cec0dfe88fe6424df6ae0eca94f1437bcd6f",
       "page_bytes": 91206
     },
     {
@@ -34,7 +34,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%A7%8C%ED%99%94",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%A7%8C%ED%99%94",
       "http_status": 200,
-      "page_sha256": "7ae0265d6bcc6e1f6f60602f8ee07d1c3095705db90fcc4847253af345547a50",
+      "page_sha256": "06e8992258b6b0807dd0ad4161d4d5e3d0c8f062f5e68f750e81665b1f8d73ca",
       "page_bytes": 88659
     },
     {
@@ -42,7 +42,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%98%81%EC%83%81",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%98%81%EC%83%81",
       "http_status": 200,
-      "page_sha256": "a518c901ff5297911c5c615253b3b380dc2887c0b3c8a9862b546afb5ecdaa34",
+      "page_sha256": "54c326653a00be4a565417ac72ae21f7026e796911035feac6665a225ce1672e",
       "page_bytes": 92615
     },
     {
@@ -50,7 +50,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88",
       "http_status": 200,
-      "page_sha256": "16e678ca118e39bd6a2af259084ffb994e7639d25ca19e87c0a5dd8818dba185",
+      "page_sha256": "6eae5bf4f594adbb80a988284fc4aa6ab16c607fdd0bd6729c3f534a1b1a880b",
       "page_bytes": 91202
     },
     {
@@ -58,7 +58,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98",
       "http_status": 200,
-      "page_sha256": "4a0ecbf718bb591300afdd23c2cf2cdb8a5729e42c24dc45fd955239c1b0781b",
+      "page_sha256": "58efe73a153e93fe3857b5b5f441615013778b812405ca38dd74b95979740291",
       "page_bytes": 91308
     },
     {
@@ -66,7 +66,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "http_status": 200,
-      "page_sha256": "6d8b6dcbc21a7d0ef7a1ce2a3be10950a96b063f5e5517bd55d7797930d77ce5",
+      "page_sha256": "57e27aaaebae3d4d6137e116fcea1efa8eb544db006acfa7ef44b56d846def54",
       "page_bytes": 99001
     },
     {
@@ -74,7 +74,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "http_status": 200,
-      "page_sha256": "bdec2e284b6b6cf4dec4d8bb6c86d6a1fb0130fe40765f9b4833d709afc305f2",
+      "page_sha256": "9f3e0661ccf829474d9b2d766367f379d3efff492fea3ec6f7f6f42adadfada8",
       "page_bytes": 95787
     },
     {
@@ -82,7 +82,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchExcInsttNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchExcInsttNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90",
       "http_status": 200,
-      "page_sha256": "9cb18761ae77916790897187229faef4686484b99f02ff69b2b050239424e0e9",
+      "page_sha256": "b7b485ebc3334a5e7c70ae6e851216fb77df37560ac9da26f9a882fa69de2b15",
       "page_bytes": 97447
     }
   ],
