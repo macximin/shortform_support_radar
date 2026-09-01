@@ -9,7 +9,7 @@
     "authority": "primary_index",
     "url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp"
   },
-  "observed_at": "2026-09-01T04:29:35+00:00",
+  "observed_at": "2026-09-01T04:41:48+00:00",
   "observed_on_kst": "2026-09-01",
   "search_mode": "server_side_query",
   "fetches": [
@@ -26,7 +26,7 @@
       "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pSearchWord=%EC%BD%98%ED%85%90%EC%B8%A0&pCurrentPage=2",
       "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pSearchWord=%EC%BD%98%ED%85%90%EC%B8%A0&pCurrentPage=2",
       "http_status": 200,
-      "page_sha256": "36fa7692395fdb9fb4d6ec6974c558db583c682ee7abf808d1c95bd24cd6e2ca",
+      "page_sha256": "ac1f0e9e28fad201fd470f697e0770c15f34c28f29266ac9ceb0757b97fe1af2",
       "page_bytes": 146921
     },
     {
@@ -50,7 +50,7 @@
       "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pSearchWord=%EB%A7%8C%ED%99%94",
       "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pSearchWord=%EB%A7%8C%ED%99%94",
       "http_status": 200,
-      "page_sha256": "ce03a77908dd60f575fd103a2f339eed7daa2e6dc701ef22cc02373b1c85846f",
+      "page_sha256": "3485cba16fe96251c0a470c5e9372bd29f1239ab2e62d3f3bb073d107fd45b93",
       "page_bytes": 142144
     },
     {
@@ -74,7 +74,7 @@
       "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pSearchWord=%EC%98%81%EC%83%81&pCurrentPage=2",
       "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pSearchWord=%EC%98%81%EC%83%81&pCurrentPage=2",
       "http_status": 200,
-      "page_sha256": "a270e3f404e4ef22e7c65f5e48221a3849798ac796f17436c841687ceb81e63c",
+      "page_sha256": "66125a563f54fb876564823faab90d7f64c8e3a49e5c357a969230ab1117aacf",
       "page_bytes": 145907
     },
     {
@@ -114,7 +114,7 @@
       "requested_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pSearchWord=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "final_url": "https://www.mcst.go.kr/site/s_culture/cultureSp/cultureSpList.jsp?pSearchType=01&pSearchWord=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "http_status": 200,
-      "page_sha256": "52efb76b62f92947c783c0ab36a7267032e1def753111ec26d8c4d1609e21f17",
+      "page_sha256": "5f86bc39bdeb467595dbb14e722651c1a5e55b7e27c79b3fa59fe7a0c142318d",
       "page_bytes": 144070
     },
     {
