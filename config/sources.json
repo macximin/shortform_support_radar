@@ -89,6 +89,8 @@
           "영상",
           "드라마",
           "인공지능",
+          "AI",
+          "IP",
           "해외진출"
         ]
       }
@@ -120,6 +122,8 @@
             "드라마",
             "애니메이션",
             "인공지능",
+            "AI",
+            "IP",
             "해외진출"
           ]
         },
@@ -161,5 +165,6 @@
   ],
   "aggregatorNote": "Bizinfo aggregates KOCCA, KOTRA, and the regional content agencies (부산정보산업진흥원, 세종테크노파크, 대구디지털혁신진흥원, 경기콘텐츠진흥원, 전남정보문화산업진흥원 and others). Registering it with a search covers those bodies without a source each. KOFIC does not feed it, and is excluded on its own grounds.",
   "scopeNote": "allRowsInScope marks a board whose every row is already a notice this radar wants - a content agency's own programme list. The discovery vocabulary is skipped there, because applying it subtracts real notices: WelCon lost 콘텐츠IP 마켓, ATF 애니메이션, KOMICS Thailand and the 론치패드 calls to it. A broad index (MCST, Bizinfo) keeps the vocabulary, because most of its rows belong to other sectors.",
-  "probeNote": "A probe search widens the net into an adjacent board using words that are not themselves in scope (KOFIC's 첨단, 온라인, 시리즈); the discovery vocabulary still screens what comes back. A non-probe query names a topic, and every such word must exist in the vocabulary - a test enforces this, because querying for 만화 and then dropping the result for not saying 웹툰 loses exactly what was searched for."
+  "probeNote": "A probe search widens the net into an adjacent board using words that are not themselves in scope (KOFIC's 첨단, 온라인, 시리즈); the discovery vocabulary still screens what comes back. A non-probe query names a topic, and every such word must exist in the vocabulary - a test enforces this, because querying for 만화 and then dropping the result for not saying 웹툰 loses exactly what was searched for.",
+  "queryReachNote": "A searching source can only find what it queries: the filter vocabulary is the ceiling, not the reach. AI and IP were in the filter but not in any query list, so 순천시 글로벌 IP 창·제작 and 경기 AI 클러스터 SLUSH fell out of collection once Bizinfo moved from its front page to search - both titles carry AI or IP and none of the other query words. Adding a filter keyword is not enough; it has to be queried somewhere too."
 }

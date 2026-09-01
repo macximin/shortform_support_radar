@@ -22,7 +22,8 @@ from shortform_support_radar.notion import (  # noqa: E402
     NotionNotConfigured,
     apply_sync,
     create_payload,
-    existing_keys,
+    existing_rows,
+    index_existing,
     plan_sync,
 )
 from shortform_support_radar.policy import PolicyViolation  # noqa: E402
@@ -88,11 +89,11 @@ def run_collect(sources: list, selector: str, out_dir: Path) -> int:
     return exit_code
 
 
-def run_notion(current: Path, dry_run: bool) -> int:
+def run_notion(current: Path, dry_run: bool, publish_weak: bool = False) -> int:
     documents = load_directory(current)
     observed_on = today_kst()
     if dry_run:
-        creates, updates = plan_sync(documents, observed_on, {})
+        creates, updates = plan_sync(documents, observed_on, {}, publish_weak)
         preview = [
             create_payload(e["candidate"], e["source_id"], observed_on, "DRY-RUN")["properties"]
             for e in creates[:3]
@@ -114,8 +115,8 @@ def run_notion(current: Path, dry_run: bool) -> int:
     except NotionNotConfigured as error:
         print(json.dumps({"status": "skipped", "reason": str(error)}, ensure_ascii=False))
         return 0
-    known = existing_keys(config)
-    creates, updates = plan_sync(documents, observed_on, known)
+    known, names = index_existing(existing_rows(config))
+    creates, updates = plan_sync(documents, observed_on, known, publish_weak, names)
     result = apply_sync(config, creates, updates, observed_on)
     print(json.dumps({"status": "ok", **result, "already_in_db": len(known)}, ensure_ascii=False))
     return 0
@@ -134,12 +135,17 @@ def main() -> int:
         action="store_true",
         help="notion: show what would be written without contacting Notion",
     )
+    parser.add_argument(
+        "--publish-weak",
+        action="store_true",
+        help="notion: also publish titles whose only vocabulary is the ambiguous AI or IP token",
+    )
     args = parser.parse_args()
 
     if args.command == "notion":
         if not args.current:
             parser.error("--current is required for notion")
-        return run_notion(args.current, args.dry_run)
+        return run_notion(args.current, args.dry_run, args.publish_weak)
 
     if args.command in {"diff", "status"}:
         if not args.current:

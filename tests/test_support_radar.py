@@ -548,9 +548,9 @@ class NotionPublishTests(unittest.TestCase):
                 "source": {"id": "kocca_pims_open"},
                 "candidate_links": [
                     self.candidate(),
-                    self.candidate(title="마감된 공고", period_state="closed"),
-                    self.candidate(title="기간없는 공고", period_state=None, period_end=None),
-                    self.candidate(title="예정 공고", period_state="upcoming"),
+                    self.candidate(title="마감된 공고", url="https://a.go.kr/d?intcNo=P2", period_state="closed"),
+                    self.candidate(title="기간없는 공고", url="https://a.go.kr/d?intcNo=P3", period_state=None, period_end=None),
+                    self.candidate(title="예정 공고", url="https://a.go.kr/d?intcNo=P4", period_state="upcoming"),
                 ],
             }
         ]
@@ -568,10 +568,31 @@ class NotionPublishTests(unittest.TestCase):
         self.assertEqual(creates, [])
         self.assertEqual(updates[0]["page_id"], "page-1")
 
-    def test_identity_survives_the_search_path(self):
-        by_title = source_key(self.candidate(url="https://a.go.kr/d?keyword=콘텐츠"), "bizinfo_notices")
-        by_agency = source_key(self.candidate(url="https://a.go.kr/d?keyword=한국콘텐츠진흥원"), "bizinfo_notices")
+    def test_identity_uses_the_board_id_not_the_search_path(self):
+        by_title = source_key(
+            self.candidate(url="https://a.go.kr/d?pblancId=PBLN_1&keyword=콘텐츠"), "bizinfo_notices"
+        )
+        by_agency = source_key(
+            self.candidate(url="https://a.go.kr/d?pblancId=PBLN_1&keyword=한국콘텐츠진흥원"), "bizinfo_notices"
+        )
         self.assertEqual(by_title, by_agency)
+        self.assertEqual(by_title, "bizinfo:PBLN_1")
+
+    def test_identity_matches_the_keys_already_in_the_database(self):
+        # Rows entered by hand use the board's own id; a different scheme would
+        # duplicate every one of them.
+        cases = [
+            ("bizinfo_notices", "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125979", "bizinfo:PBLN_000000000125979"),
+            ("welcon_events", "https://welcon.kocca.kr/ko/event/content-americas-2027--578", "welcon:content-americas-2027--578"),
+            ("kocca_pims_open", "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00085009&menuNo=204104", "kocca:326D00085009"),
+        ]
+        for source_id, url, expected in cases:
+            with self.subTest(source=source_id):
+                self.assertEqual(source_key(self.candidate(url=url), source_id), expected)
+
+    def test_a_board_without_an_id_falls_back_to_the_title(self):
+        key = source_key({"title": "제목만 있는 공고", "url": "https://a.go.kr/"}, "kofic_business_notices")
+        self.assertEqual(key, "kofic:title:제목만 있는 공고")
 
 
 class DiffTests(unittest.TestCase):

@@ -9,7 +9,7 @@
     "authority": "government_index",
     "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do"
   },
-  "observed_at": "2026-09-01T08:30:44+00:00",
+  "observed_at": "2026-09-01T08:38:05+00:00",
   "observed_on_kst": "2026-09-01",
   "search_mode": "server_side_query",
   "fetches": [
@@ -18,7 +18,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%BD%98%ED%85%90%EC%B8%A0",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%BD%98%ED%85%90%EC%B8%A0",
       "http_status": 200,
-      "page_sha256": "7ff9b102091e28533ba367fd213f663c289f4eb2756f9e50792d68c33b6d621b",
+      "page_sha256": "312991facd20532fe6e57c12a7a2ba2337f6d32557d4aceda8d2aca7b1782e75",
       "page_bytes": 112641
     },
     {
@@ -26,7 +26,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9B%B9%ED%88%B0",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9B%B9%ED%88%B0",
       "http_status": 200,
-      "page_sha256": "40febd0f54909f45fdfd87e9436fc1aedb153e96392892ea82256b3f5d96997b",
+      "page_sha256": "3276defb7dc3d13779197103884a06061b0c7df136101599eacdc8f03bab8a31",
       "page_bytes": 91206
     },
     {
@@ -34,7 +34,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%A7%8C%ED%99%94",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%A7%8C%ED%99%94",
       "http_status": 200,
-      "page_sha256": "cf85f9fcc48fb861c9bebae907d70c018ebcbe5a1e88217acf3ff567a2e47514",
+      "page_sha256": "acdc509f040357846681e9e913eec4d99b46b39865c25886f64b50b644fcd3bb",
       "page_bytes": 88659
     },
     {
@@ -42,7 +42,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%98%81%EC%83%81",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%98%81%EC%83%81",
       "http_status": 200,
-      "page_sha256": "99841c7601d5cac05172a7926cc1c65803dd5a100e2b9a4b8b056ec380d0a0ea",
+      "page_sha256": "3ff230fd2af6dcf54a9a9e39a400f27a53aac206b1326187efa97fcac2ad16f7",
       "page_bytes": 92615
     },
     {
@@ -50,7 +50,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88",
       "http_status": 200,
-      "page_sha256": "1647e58c83f7577605c8ba656dcac6f620a315a110e42b25feb6327a1ec367a8",
+      "page_sha256": "2b5f22b49766b694864d8511c81137af11b3b0b9b2380d4c647740fbd383ee39",
       "page_bytes": 91202
     },
     {
@@ -58,7 +58,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98",
       "http_status": 200,
-      "page_sha256": "a5b90446bf613a1f13c81f511fd10976ec27ddf42c8b36544cd3c9da77b15509",
+      "page_sha256": "878d3f0b5aac8807b001cebadb611634c0c1a313918d66cdd80c1c5e21fa862c",
       "page_bytes": 91308
     },
     {
@@ -66,15 +66,31 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "http_status": 200,
-      "page_sha256": "6dc8dc59d405998fe97a4c8a29a3fda1e4346d9bff66b7caf927e335c7fb8d35",
+      "page_sha256": "e9fb12b6207ec95eb6d6e30189e3e14feca6463d3201b894a588a06c517eb6aa",
       "page_bytes": 99001
+    },
+    {
+      "query": "AI",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=AI",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=AI",
+      "http_status": 200,
+      "page_sha256": "452a9089754c977ec56b3d32479a9e4a3112006ad4d75c8891debaa9d7ff574f",
+      "page_bytes": 113001
+    },
+    {
+      "query": "IP",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=IP",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=IP",
+      "http_status": 200,
+      "page_sha256": "33cc4ffec67b99974f0b42aef1a11cc6dfc48d7f3e4431b46a99f136559b5258",
+      "page_bytes": 111611
     },
     {
       "query": "해외진출",
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "http_status": 200,
-      "page_sha256": "380385c717c612c92047ccc844756e7f3b3568ec6d05a8c23a231c080f9d6aba",
+      "page_sha256": "0d16422f3b1f77871cfcaae24fc188009ea89237319c24ab637b1b282a394836",
       "page_bytes": 95787
     },
     {
@@ -82,7 +98,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchExcInsttNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchExcInsttNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90",
       "http_status": 200,
-      "page_sha256": "4594a8fc85aba6beafbcde317c05efb7a892eab9b859f8438db8e173236d387d",
+      "page_sha256": "bce2953d951f07a5bae59c85701e77da79b0b6995fe398a1c607252672eb3aab",
       "page_bytes": 98992
     }
   ],
@@ -106,9 +122,19 @@
     "제작지원",
     "제작 지원"
   ],
-  "candidate_count": 25,
-  "open_candidate_count": 14,
+  "candidate_count": 51,
+  "open_candidate_count": 26,
   "candidate_links": [
+    {
+      "title": "2026년 피지컬 AI 기반 휴머노이드 제조혁신센터 구축사업 수혜기업 통합 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125732",
+      "period_start": "2026-08-24",
+      "period_end": "2026-09-07",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
+    },
     {
       "title": "2026년 ATF 연계 방송콘텐츠 해외유통 지원 사업 공고",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125340",
@@ -150,6 +176,36 @@
       "matched_query": "콘텐츠"
     },
     {
+      "title": "[전남광주] 순천시 2026년 글로벌 IP 창ㆍ제작 지원사업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000125979",
+      "period_start": "2026-08-25",
+      "period_end": "2026-09-09",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "IP"
+    },
+    {
+      "title": "2026년 서울용산시제품제작소 AIㆍ스마트전자제품 금형지원 기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125850",
+      "period_start": "2026-08-26",
+      "period_end": "2026-09-10",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
+    },
+    {
+      "title": "[강원] 2026년 소상공인 IP창출지원 레시피 특허 출원 지원사업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000126005",
+      "period_start": "2026-09-01",
+      "period_end": "2026-09-10",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "IP"
+    },
+    {
       "title": "[대구] 2026년 콘텐츠 스케일업 액셀러레이팅 프로그램 참여기업 추가모집 공고(대구콘텐츠기업지원센터)",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125897",
       "period_start": "2026-08-26",
@@ -170,6 +226,26 @@
       "matched_query": "콘텐츠"
     },
     {
+      "title": "[충북] 충주시 2026년 AI 파일럿 프로젝트 실증 지원 사업 수혜기업 추가 모집 공고(AI 자율제조 선도프로젝트)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125956",
+      "period_start": "2026-08-28",
+      "period_end": "2026-09-10",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
+    },
+    {
+      "title": "2026년 AI 기반 주파수 간섭분석 및 전파예측기술 개발사업 신규지원 대상과제 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125947",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-11",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
+    },
+    {
       "title": "[강원] 2026년 2차 지역기업 인식개선ㆍ브랜딩 콘텐츠 제작 지원 추가 모집 공고(지역산업맞춤형 일자리 지원사업)",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000126025",
       "period_start": "2026-08-31",
@@ -180,6 +256,46 @@
       "matched_query": "콘텐츠"
     },
     {
+      "title": "[경기] 2026년 AI 클러스터 글로벌 프로그램(유럽) 2026 SLUSH 참가기업 모집 공고(경기도 AI 혁신클러스터 조성 사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125977",
+      "period_start": "2026-08-28",
+      "period_end": "2026-09-11",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
+    },
+    {
+      "title": "[충북] 2026년 지능형첨단부품산업의 디지털전환 거점 구축 사업 AI 융합 제품ㆍ솔루션 고도화 지원 수혜기업 추가 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000126001",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-11",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
+    },
+    {
+      "title": "2026년 온디바이스AI 제품개발ㆍ제조 지원기업 모집 공고(가전AX 확산을 위한 온디바이스 AI 제품개발 및 제조 기반구축)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125825",
+      "period_start": "2026-08-26",
+      "period_end": "2026-09-14",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
+    },
+    {
+      "title": "[인천] 서해구 2026년 한ㆍ중 IP SOLUTION 지원기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000126015",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-14",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "IP"
+    },
+    {
       "title": "[대구] 2026년 콘텐츠코리아랩 콘텐츠 스타트업 글로벌 챌린지 참가기업 모집 공고",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125992",
       "period_start": "2026-08-31",
@@ -188,6 +304,16 @@
       "period_state": "open",
       "open_on_observation": true,
       "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[전남광주] 첨단로봇ㆍAI 활용 중소기업 제조혁신 사업 기업지원(실증지원) 2차 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000126029",
+      "period_start": "2026-09-01",
+      "period_end": "2026-09-15",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
     },
     {
       "title": "[충북] 2026년 2차 충북 인공지능산업 컨트롤타워 기반 구축사업 AI융합 기획과제 모집 공고",
@@ -208,6 +334,16 @@
       "period_state": "open",
       "open_on_observation": true,
       "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 지역 중소기업 AI 활용ㆍ확산 유공 포상 후보자 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125994",
+      "period_start": "2026-09-01",
+      "period_end": "2026-09-21",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "AI"
     },
     {
       "title": "2027년 콘텐츠 아메리카(Content Americas) 한국공동관 및 쇼케이스 참가기업 모집 공고",
@@ -240,6 +376,16 @@
       "matched_query": "콘텐츠"
     },
     {
+      "title": "중소제조 특화 Multi AI Agent 개발(R&D) 점프업 Track 시행계획 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125978",
+      "period_start": "2026-10-01",
+      "period_end": "2026-10-30",
+      "status_label": null,
+      "period_state": "upcoming",
+      "open_on_observation": false,
+      "matched_query": "AI"
+    },
+    {
       "title": "2026년 실감콘텐츠 스튜디오 프로젝트 현물지원기업 모집 공고",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000118285",
       "period_start": "2026-02-02",
@@ -250,6 +396,36 @@
       "matched_query": "콘텐츠"
     },
     {
+      "title": "2026년 IP담보대출연계 지식재산평가지원사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000119919",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
+    },
+    {
+      "title": "2026년 IP투자연계 지식재산평가 지원사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000123338",
+      "period_start": null,
+      "period_end": null,
+      "status_label": "상시",
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
+    },
+    {
+      "title": "2026년 IP투자연계 지식재산평가 지원사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000121664",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
+    },
+    {
       "title": "2026년 K-Global 해외진출 지원사업 참여기업 모집 공고",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C&pblancId=PBLN_000000000120275",
       "period_start": null,
@@ -258,6 +434,16 @@
       "period_state": null,
       "open_on_observation": null,
       "matched_query": "해외진출"
+    },
+    {
+      "title": "2026년 소프트웨어 지식재산권(IP) 평가보증 지원사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000120620",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
     },
     {
       "title": "2026년 전남 영화ㆍ드라마 제작 인센티브 지원사업 공고",
@@ -280,6 +466,46 @@
       "matched_query": "콘텐츠"
     },
     {
+      "title": "[경남] 2026년 IP디딤돌프로그램 후속지원사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000123218",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
+    },
+    {
+      "title": "[경남] 2026년 소상공인 IP출원(상표출원) 지원사업 소상공인 수혜자 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000121193",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
+    },
+    {
+      "title": "[경남] 창원시 2026년 강소특구 이노테크 기업육성 AI-CNC 기반 제품 실증 및 성능 검증 지원 사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125928",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "AI"
+    },
+    {
+      "title": "[경북] 2026년 상인ㆍ소상공인 AI코칭 지원사업 참여자 모집 연장공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125962",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "AI"
+    },
+    {
       "title": "[광주] 2026년 소상공인 SNSㆍ블로그 홍보지원 참여업체 모집 공고(디지털콘텐츠 홍보지원사업)",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000121231",
       "period_start": null,
@@ -300,6 +526,16 @@
       "matched_query": "인공지능"
     },
     {
+      "title": "[대전] 2026년 소상공인 IP출원(상표출원) 지원 사업 소상공인 수혜자 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000124840",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
+    },
+    {
       "title": "[부산] 2026년 게임ㆍ콘텐츠 기업을 위한 무료 법률 자문 오피스아워 상시 모집 공고",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000123841",
       "period_start": null,
@@ -318,6 +554,16 @@
       "period_state": null,
       "open_on_observation": null,
       "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[전남] 2026년 IP(지식재산) 디딤돌 프로그램 후속지원사업 지원대상 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000120681",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
     },
     {
       "title": "[전남광주] 2026년 3차 인공지능 기술 고도화 지원사업 상시 모집 공고(AI융합 지능형 농업 생태계 구축)",
@@ -358,6 +604,36 @@
       "period_state": null,
       "open_on_observation": null,
       "matched_query": "인공지능"
+    },
+    {
+      "title": "[충남] 2026년 소상공인 IP출원(상표) 지원 사업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000121671",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
+    },
+    {
+      "title": "[충남ㆍ충북ㆍ대전ㆍ세종] 2026년 중소기업 AI훈련확산센터 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=AI&pblancId=PBLN_000000000125707",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "AI"
+    },
+    {
+      "title": "[충북] 2026년 유망기업 IP투자연계 지식재산평가 지원사업 모집 재공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=IP&pblancId=PBLN_000000000122718",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "IP"
     }
   ]
 }

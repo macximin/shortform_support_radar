@@ -14,11 +14,13 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 from dataclasses import dataclass
 from urllib.error import HTTPError
+from urllib.parse import parse_qsl, urlsplit
 from urllib.request import Request, urlopen
 
-from .notice import mentions
+from .notice import is_weak_match, mentions
 from .policy import PolicyViolation, PublicUrl
 
 NOTION_API = "https://api.notion.com/v1"
@@ -91,13 +93,71 @@ class NotionConfig:
         return cls(token=token, database_id=database)
 
 
+# Each board already issues a stable id for a notice. Using it as 원천 ID matches
+# the rows a person entered by hand and survives a board editing a title, which a
+# title-based key would not.
+NATIVE_ID_PARAMS = ("pblancId", "intcNo", "rcrtSn", "seqNo", "idx", "no")
+
+SOURCE_PREFIX = {
+    "kocca_pims_open": "kocca",
+    "kocca_pims_archive": "kocca",
+    "welcon_events": "welcon",
+    "mcst_culture_support": "mcst",
+    "kofic_business_notices": "kofic",
+    "bizinfo_notices": "bizinfo",
+}
+
+
+def native_id(url: str) -> str | None:
+    """The board's own identifier for a notice, from its detail link."""
+    parts = urlsplit(url)
+    params = dict(parse_qsl(parts.query, keep_blank_values=True))
+    for name in NATIVE_ID_PARAMS:
+        value = params.get(name, "").strip()
+        if value:
+            return value
+    slug = parts.path.rstrip("/").rsplit("/", 1)[-1]
+    return slug or None
+
+
 def source_key(candidate: dict, source_id: str) -> str:
     """A stable identifier for one notice, used as 원천 ID to avoid duplicates.
 
-    The URL a board hands back carries the search that reached it, so the stored
-    identity is the source plus the notice title rather than the raw link.
+    Falls back to the title only when a board publishes no identifier of its own.
     """
-    return f"{source_id}::{candidate['title']}"[:2000]
+    prefix = SOURCE_PREFIX.get(source_id, source_id)
+    identifier = native_id(candidate.get("url", "")) or f"title:{candidate['title']}"
+    return f"{prefix}:{identifier}"[:2000]
+
+
+# A board that runs a programme is preferred over an aggregator that relists it,
+# so the surviving row carries the agency rather than an empty 기관.
+SOURCE_PRIORITY = ("kocca_pims_open", "welcon_events", "kocca_pims_archive", "kofic_business_notices")
+
+_NOISE = re.compile(r"\([^)]*\)|\[[^\]]*\]|20\d\d\s*년?|[^0-9a-z가-힣]")
+_TRAILING = ("공고문", "공고", "안내", "모집")
+
+
+def programme_name(title: str) -> str:
+    """A comparable form of a notice title, for spotting one programme on two boards.
+
+    2027 콘텐츠 아메리카(Content Americas) 한국공동관 ... 모집 and
+    2027 콘텐츠 아메리카 한국공동관 ... 모집공고 are the same call; the receipts keep
+    both as separate observations, but a review database wants one row.
+    """
+    text = _NOISE.sub("", title.lower())
+    changed = True
+    while changed:
+        changed = False
+        for suffix in _TRAILING:
+            if text.endswith(suffix) and len(text) > len(suffix) + 4:
+                text = text[: -len(suffix)]
+                changed = True
+    return text
+
+
+def _priority(source_id: str) -> int:
+    return SOURCE_PRIORITY.index(source_id) if source_id in SOURCE_PRIORITY else len(SOURCE_PRIORITY)
 
 
 def interest_axes(title: str) -> list[str]:
@@ -121,7 +181,9 @@ def _date(start: str | None, end: str | None = None) -> dict:
 
 def machine_properties(candidate: dict, source_id: str, observed_on: dt.date) -> dict:
     """Everything the machine observed. No judgement fields."""
-    axes = interest_axes(candidate["title"])
+    weak = is_weak_match(candidate["title"])
+    # A weak match has no topical evidence, so it gets no topical tag.
+    axes = [] if weak else interest_axes(candidate["title"])
     properties: dict = {
         "공고명": _title(candidate["title"]),
         "원천 ID": _text(source_key(candidate, source_id)),
@@ -130,6 +192,7 @@ def machine_properties(candidate: dict, source_id: str, observed_on: dt.date) ->
             f"{source_id} 목록 행 관측"
             + (f" · 검색어 {candidate['matched_query']}" if candidate.get("matched_query") else "")
             + (" · 집계 게시판이라 수행기관 미확인" if source_id in AGGREGATOR_SOURCES else "")
+            + (" · AI/IP 단독 매치라 콘텐츠 사업 여부 미확인" if weak else "")
         ),
         "최초 수집일": _date(observed_on.isoformat()),
         "최종 확인일": _date(observed_on.isoformat()),
@@ -185,9 +248,9 @@ def _request(config: NotionConfig, method: str, path: str, body: dict | None = N
         raise RuntimeError(f"Notion {method} {path} failed: {error.code} {detail}") from error
 
 
-def existing_keys(config: NotionConfig) -> dict[str, str]:
-    """Map 원천 ID to page id for every row already in the database."""
-    found: dict[str, str] = {}
+def existing_rows(config: NotionConfig) -> list[dict]:
+    """Every row already in the database, as {key, title, page_id}."""
+    rows: list[dict] = []
     cursor: str | None = None
     while True:
         body: dict = {"page_size": 100}
@@ -195,24 +258,50 @@ def existing_keys(config: NotionConfig) -> dict[str, str]:
             body["start_cursor"] = cursor
         page = _request(config, "POST", f"/databases/{config.database_id}/query", body)
         for row in page.get("results", []):
-            prop = row.get("properties", {}).get("원천 ID", {})
-            parts = prop.get("rich_text") or []
-            key = "".join(p.get("plain_text", "") for p in parts).strip()
-            if key:
-                found[key] = row["id"]
+            properties = row.get("properties", {})
+            key = "".join(
+                part.get("plain_text", "") for part in (properties.get("원천 ID", {}).get("rich_text") or [])
+            ).strip()
+            title = "".join(
+                part.get("plain_text", "") for part in (properties.get("공고명", {}).get("title") or [])
+            ).strip()
+            rows.append({"key": key, "title": title, "page_id": row["id"]})
         if not page.get("has_more"):
-            return found
+            return rows
         cursor = page.get("next_cursor")
 
 
-def plan_sync(documents: list[dict], observed_on: dt.date, known: dict[str, str]) -> tuple[list[dict], list[dict]]:
+def index_existing(rows: list[dict]) -> tuple[dict[str, str], set[str]]:
+    """Keys to page ids, plus the programme names already represented.
+
+    Both are needed: a board id catches the same notice seen again, and the
+    programme name catches the same call arriving from a different board.
+    """
+    keys = {r["key"]: r["page_id"] for r in rows if r["key"]}
+    names = {programme_name(r["title"]) for r in rows if r["title"]}
+    return keys, names
+
+
+def plan_sync(
+    documents: list[dict],
+    observed_on: dt.date,
+    known: dict[str, str],
+    publish_weak: bool = False,
+    known_programmes: set[str] | frozenset[str] = frozenset(),
+) -> tuple[list[dict], list[dict]]:
     """Split observed candidates into rows to create and rows to refresh.
 
     Only candidates with a published window are published: a row with no deadline
     cannot be triaged in a deadline database, and the KOFIC board has no period
     column at all.
+
+    A weak match - one whose only vocabulary is the ambiguous AI or IP token - is
+    held back by default. Querying those tokens is what recovers 순천시 글로벌 IP
+    창·제작, but it also returns 휴머노이드 제조혁신센터 and 레시피 특허 출원, and a
+    review database earns its keep by not carrying those. Pass publish_weak to
+    include them; a row already in the database is always refreshed either way.
     """
-    creates: list[dict] = []
+    creates: dict[str, dict] = {}
     updates: list[dict] = []
     seen: set[str] = set()
     for document in documents:
@@ -224,12 +313,21 @@ def plan_sync(documents: list[dict], observed_on: dt.date, known: dict[str, str]
             if key in seen:
                 continue
             seen.add(key)
+            if key not in known and not publish_weak and is_weak_match(candidate["title"]):
+                continue
             entry = {"key": key, "source_id": source_id, "candidate": candidate}
             if key in known:
                 updates.append({**entry, "page_id": known[key]})
-            else:
-                creates.append(entry)
-    return creates, updates
+                continue
+            # One programme, one row: prefer the board that runs it, and never add
+            # one the database already carries under another board's id.
+            name = programme_name(candidate["title"])
+            if name in known_programmes:
+                continue
+            held = creates.get(name)
+            if held is None or _priority(source_id) < _priority(held["source_id"]):
+                creates[name] = entry
+    return list(creates.values()), updates
 
 
 def apply_sync(

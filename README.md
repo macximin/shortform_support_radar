@@ -78,6 +78,22 @@ property is left empty rather than guessed, and `수집 근거` says why.
 Only a notice with a published window is published, so the KOFIC board - which has
 no 모집기간 column - stays out of the database and is followed with `diff` instead.
 
+`원천 ID` is the board's own identifier - `bizinfo:PBLN_000000000125979`,
+`kocca:326D00085009`, `welcon:content-americas-2027--578` - which is the scheme the
+rows entered by hand already used. A title-based key would have duplicated every
+one of them, and would break the moment a board edits a title.
+
+One programme gets one row even when two boards carry it: 콘텐츠 아메리카 appears on
+both the KOCCA board and WelCon, and the receipts keep both as separate
+observations while the database keeps one, preferring the board that runs the
+programme. A call the database already holds under another board's id is not
+re-added.
+
+A title whose only vocabulary is the ambiguous `AI` or `IP` token is held back by
+default. Querying those tokens is what recovers 순천시 글로벌 IP 창·제작, but it also
+returns 휴머노이드 제조혁신센터 and 레시피 특허 출원. Pass `--publish-weak` to include
+them.
+
 Credentials come from the environment and are never stored here:
 
 ```powershell

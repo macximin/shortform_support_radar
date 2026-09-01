@@ -9,7 +9,7 @@
     "authority": "primary",
     "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4"
   },
-  "observed_at": "2026-09-01T08:30:18+00:00",
+  "observed_at": "2026-09-01T08:37:35+00:00",
   "observed_on_kst": "2026-09-01",
   "search_mode": "server_side_query",
   "fetches": [
@@ -18,7 +18,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%BD%98%ED%85%90%EC%B8%A0",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%BD%98%ED%85%90%EC%B8%A0",
       "http_status": 200,
-      "page_sha256": "b0ef01350da352a2c119cf966c3f6c8acc9d58b17c8c36c6018ab8b0136ee57e",
+      "page_sha256": "3a000fd26eb1431ad6007dffd806a6ddb5c8c6620723987c6e256d8971d8c181",
       "page_bytes": 140822
     },
     {
@@ -58,7 +58,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "http_status": 200,
-      "page_sha256": "9974fd65970a387232fb56294d2923802551184677e6b0ed42104727fff56af7",
+      "page_sha256": "fe61e2325765424dcf20be1cd4d1be7c4ba7fcf9b67bcec0d2fe890719e2a0eb",
       "page_bytes": 139867
     },
     {

@@ -22,6 +22,13 @@ KEYWORDS = (
     "해외진출", "수출", "제작지원", "제작 지원",
 )
 NOTICE_SIGNALS = ("공고", "모집", "지원", "사업", "참가", "쇼케이스", "공모")
+
+# ai and ip are ordinary words in manufacturing and patent notices - 피지컬 AI
+# 휴머노이드, 소상공인 IP창출 레시피 특허. On their own they are a weak signal, so a
+# title matching only these is kept but marked, not silently treated as a content
+# call. Dropping them would lose 순천시 글로벌 IP 창·제작 and the AI 클러스터 export
+# programme, both of which a person had already logged as candidates.
+WEAK_KEYWORDS = ("ai", "ip")
 STATUS_LABELS = ("모집중", "접수중", "진행중", "접수예정", "모집예정", "마감", "종료", "상시")
 BADGE_PREFIXES = ("새글", "공지", "신규", "NEW", "new")
 
@@ -61,6 +68,16 @@ def mentions(word: str, text: str) -> bool:
     if word.isascii():
         return re.search(rf"(?<![a-z0-9]){re.escape(word.lower())}(?![a-z0-9])", lowered) is not None
     return word in lowered
+
+
+def matched_keywords(title: str) -> list[str]:
+    return [k for k in KEYWORDS if mentions(k, title)]
+
+
+def is_weak_match(title: str) -> bool:
+    """True when the only vocabulary present is an ambiguous token."""
+    hits = matched_keywords(title)
+    return bool(hits) and all(k in WEAK_KEYWORDS for k in hits)
 
 
 def looks_like_notice_title(title: str) -> bool:
