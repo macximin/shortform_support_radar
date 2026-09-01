@@ -45,18 +45,21 @@ do not fire back to back.
 
 ## Daily run
 
-`.github/workflows/daily-radar.yml` collects every day at 04:00 UTC (13:00 KST),
-writes the run to `evidence/<date>/daily`, regenerates [STATUS.md](STATUS.md), and
-commits. GitHub can start a scheduled run late under load, so treat the hour as
-approximate; nothing depends on the exact minute.
+Local only. There is no scheduled runner, so a day the machine is off is a day
+with no collection - read [STATUS.md](STATUS.md) rather than assuming a run
+happened.
+
+```powershell
+.\tools\daily.ps1
+```
+
+It collects into `evidence/<date>/daily`, regenerates [STATUS.md](STATUS.md), and
+commits. It exits non-zero and leaves a partial-run warning at the top of
+STATUS.md if a board did not answer. `-NoCommit` skips the commit.
 
 [STATUS.md](STATUS.md) is the file to read: what is open, sorted by closing date
 with days remaining, plus what appeared since the previous run. Deadlines come
 from the boards; eligibility does not.
-
-The job runs on a standard GitHub-hosted runner in a public repository and uploads
-no artifacts, so it consumes no billable minutes or storage. Keep it that way -
-switching to a larger runner or adding `upload-artifact` would start charges.
 
 ## Run a bounded public canary
 

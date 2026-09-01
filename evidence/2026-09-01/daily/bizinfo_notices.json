@@ -9,7 +9,7 @@
     "authority": "government_index",
     "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do"
   },
-  "observed_at": "2026-09-01T05:08:21+00:00",
+  "observed_at": "2026-09-01T08:23:40+00:00",
   "observed_on_kst": "2026-09-01",
   "search_mode": "server_side_query",
   "fetches": [
@@ -18,15 +18,15 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%BD%98%ED%85%90%EC%B8%A0",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%BD%98%ED%85%90%EC%B8%A0",
       "http_status": 200,
-      "page_sha256": "9ee25358957f2dc1858193bd90a6aa98c368db7f974d2585d855d7599c6f969b",
-      "page_bytes": 109105
+      "page_sha256": "96464b399d8b9cfd22d4f5b2afc1f52451090886eb50a767f35f5e241009e1e5",
+      "page_bytes": 112641
     },
     {
       "query": "웹툰",
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9B%B9%ED%88%B0",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9B%B9%ED%88%B0",
       "http_status": 200,
-      "page_sha256": "cb5cdf0375ed8595b1ba9107da92cec0dfe88fe6424df6ae0eca94f1437bcd6f",
+      "page_sha256": "22b9529b5d498d7b10d654191c6b49f966ff85e37f39d087e44eda95143978a0",
       "page_bytes": 91206
     },
     {
@@ -34,7 +34,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%A7%8C%ED%99%94",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%A7%8C%ED%99%94",
       "http_status": 200,
-      "page_sha256": "06e8992258b6b0807dd0ad4161d4d5e3d0c8f062f5e68f750e81665b1f8d73ca",
+      "page_sha256": "49acf0b112ef5b8c3af15212c8e17d85a7ff9075ff2e030ec3d320cd0a7119cc",
       "page_bytes": 88659
     },
     {
@@ -42,7 +42,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%98%81%EC%83%81",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%98%81%EC%83%81",
       "http_status": 200,
-      "page_sha256": "54c326653a00be4a565417ac72ae21f7026e796911035feac6665a225ce1672e",
+      "page_sha256": "3ec51d023f33a00211c01063073632b7a72c7c4f1d2955dd46e5b2f32098c331",
       "page_bytes": 92615
     },
     {
@@ -50,7 +50,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88",
       "http_status": 200,
-      "page_sha256": "6eae5bf4f594adbb80a988284fc4aa6ab16c607fdd0bd6729c3f534a1b1a880b",
+      "page_sha256": "1c30e858444f0986867d69aa12a838f6c6b077684fca0be79c8c5a2dd0aa5d69",
       "page_bytes": 91202
     },
     {
@@ -58,7 +58,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98",
       "http_status": 200,
-      "page_sha256": "58efe73a153e93fe3857b5b5f441615013778b812405ca38dd74b95979740291",
+      "page_sha256": "86075b8ce2acfefb55ca4df873ca2875c356fcb1a69cdfaf9f87cbefa668f50a",
       "page_bytes": 91308
     },
     {
@@ -66,7 +66,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "http_status": 200,
-      "page_sha256": "57e27aaaebae3d4d6137e116fcea1efa8eb544db006acfa7ef44b56d846def54",
+      "page_sha256": "814413d31dc416fbbfd7390256fc7c586af9d105b3d1e1f07e5265630dc90392",
       "page_bytes": 99001
     },
     {
@@ -74,7 +74,7 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "http_status": 200,
-      "page_sha256": "9f3e0661ccf829474d9b2d766367f379d3efff492fea3ec6f7f6f42adadfada8",
+      "page_sha256": "36567baea53467de7530c922add93b9eec6be6553fb973565b2f7a2eb5a175d1",
       "page_bytes": 95787
     },
     {
@@ -82,8 +82,8 @@
       "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchExcInsttNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90",
       "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchExcInsttNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90",
       "http_status": 200,
-      "page_sha256": "b7b485ebc3334a5e7c70ae6e851216fb77df37560ac9da26f9a882fa69de2b15",
-      "page_bytes": 97447
+      "page_sha256": "7bf8ab8aa2af2f220c151b6c3f6825c750a7ebfb07344e309e3c25cd2d54aa27",
+      "page_bytes": 98992
     }
   ],
   "keyword_set": [
@@ -106,8 +106,8 @@
     "제작지원",
     "제작 지원"
   ],
-  "candidate_count": 23,
-  "open_candidate_count": 12,
+  "candidate_count": 25,
+  "open_candidate_count": 14,
   "candidate_links": [
     {
       "title": "2026년 ATF 연계 방송콘텐츠 해외유통 지원 사업 공고",
@@ -170,6 +170,26 @@
       "matched_query": "콘텐츠"
     },
     {
+      "title": "[강원] 2026년 2차 지역기업 인식개선ㆍ브랜딩 콘텐츠 제작 지원 추가 모집 공고(지역산업맞춤형 일자리 지원사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000126025",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-11",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[대구] 2026년 콘텐츠코리아랩 콘텐츠 스타트업 글로벌 챌린지 참가기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125992",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-15",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
       "title": "[충북] 2026년 2차 충북 인공지능산업 컨트롤타워 기반 구축사업 AI융합 기획과제 모집 공고",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&pblancId=PBLN_000000000125965",
       "period_start": "2026-08-26",
@@ -185,6 +205,16 @@
       "period_start": "2026-08-25",
       "period_end": "2026-09-18",
       "status_label": "상시",
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2027년 콘텐츠 아메리카(Content Americas) 한국공동관 및 쇼케이스 참가기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000126036",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-21",
+      "status_label": null,
       "period_state": "open",
       "open_on_observation": true,
       "matched_query": "콘텐츠"
@@ -214,16 +244,6 @@
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000118285",
       "period_start": "2026-02-02",
       "period_end": "2026-12-01",
-      "status_label": null,
-      "period_state": "open",
-      "open_on_observation": true,
-      "matched_query": "콘텐츠"
-    },
-    {
-      "title": "[인천] 2026년 가상융합산업 콘텐츠 제작 장비 임차지원 공고(인천 가상융합산업 혁신센터)",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000117307",
-      "period_start": "2026-01-23",
-      "period_end": "2026-12-31",
       "status_label": null,
       "period_state": "open",
       "open_on_observation": true,

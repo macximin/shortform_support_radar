@@ -9,7 +9,7 @@
     "authority": "primary",
     "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4"
   },
-  "observed_at": "2026-09-01T05:04:07+00:00",
+  "observed_at": "2026-09-01T08:23:14+00:00",
   "observed_on_kst": "2026-09-01",
   "search_mode": "server_side_query",
   "fetches": [
@@ -18,7 +18,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%BD%98%ED%85%90%EC%B8%A0",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%BD%98%ED%85%90%EC%B8%A0",
       "http_status": 200,
-      "page_sha256": "d1ef9e75f3bc85f55a3ab8fb0b8d87436772f932c9096aa17ae50713e64b301b",
+      "page_sha256": "a17770e4d99c1d5572de763e5e0c741a3872d4f1240f55fff837e704a73085d6",
       "page_bytes": 140822
     },
     {
@@ -26,7 +26,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9B%B9%ED%88%B0",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9B%B9%ED%88%B0",
       "http_status": 200,
-      "page_sha256": "9962adbcabe69a40245b2b92c230d969f937758f515fb4c25281087503d68c16",
+      "page_sha256": "a4afad6a4a9e046e260d0500a1ef1c5ddb5776df64a5eb510a94c1a1949d810f",
       "page_bytes": 139582
     },
     {
@@ -34,7 +34,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%A7%8C%ED%99%94",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%A7%8C%ED%99%94",
       "http_status": 200,
-      "page_sha256": "9bc0a6260de49f89f42b47c064372108d974ba89dac2075187a369bcaa198318",
+      "page_sha256": "bffbad7b2989b92c931da1af0dedf5e812249a1916b6169e517442d28f27a8fb",
       "page_bytes": 140047
     },
     {
@@ -42,7 +42,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%B0%A9%EC%86%A1%EC%98%81%EC%83%81",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%B0%A9%EC%86%A1%EC%98%81%EC%83%81",
       "http_status": 200,
-      "page_sha256": "f0e88a94caeb6b8de33d442aeea20dbdfa363145a0fa3453357880bfc09535a4",
+      "page_sha256": "70f96bf3fa09fffa5eb62efb399544b9ab96e3288b84e9455d1b89f04f250522",
       "page_bytes": 140703
     },
     {
@@ -50,7 +50,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%93%9C%EB%9D%BC%EB%A7%88",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EB%93%9C%EB%9D%BC%EB%A7%88",
       "http_status": 200,
-      "page_sha256": "4b9fcaa55eb569c4d8cc7f93b7ac6305ea1185b19c6a65cd2095afc7a5f9dfa3",
+      "page_sha256": "5f4b7cde73ba9141ebf07e0d01b9a4c18d74ea815671aa78bf7781a670c6ddd8",
       "page_bytes": 139609
     },
     {
@@ -58,7 +58,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
       "http_status": 200,
-      "page_sha256": "d6df928ddff851a3d4d6cc8f5b1415ba49e77006f535ee84dc7292c662c4854a",
+      "page_sha256": "9974fd65970a387232fb56294d2923802551184677e6b0ed42104727fff56af7",
       "page_bytes": 139867
     },
     {
@@ -66,7 +66,7 @@
       "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&search=01&searchWrd=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
       "http_status": 200,
-      "page_sha256": "07d6ad2267c514d2d1494e234929abff73fd41d9b6ab50c0fd7b333b1a79e290",
+      "page_sha256": "5d5f56a3beecf162710f57132c610511eef559dfa1c7ad7e41523b2c3dd836ea",
       "page_bytes": 139767
     }
   ],
