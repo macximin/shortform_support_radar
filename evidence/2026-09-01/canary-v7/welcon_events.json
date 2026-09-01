@@ -1,0 +1,57 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v3",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "welcon_events",
+    "publisher": "WelCon / KOCCA",
+    "category": "export_event_announcement",
+    "authority": "primary",
+    "url": "https://welcon.kocca.kr/ko/event/all"
+  },
+  "observed_at": "2026-09-01T01:59:49+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "list_page",
+  "fetches": [
+    {
+      "query": null,
+      "requested_url": "https://welcon.kocca.kr/ko/event/all",
+      "final_url": "https://welcon.kocca.kr/ko/event/all",
+      "http_status": 200,
+      "page_sha256": "ba29c1eddb86dc54c52ed7f054fd0e0a8e0f92fefcdacdfe39cbdd23fcb60ec6",
+      "page_bytes": 165407
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 1,
+  "open_candidate_count": 1,
+  "candidate_links": [
+    {
+      "title": "2027 콘텐츠 아메리카 한국공동관 및 쇼케이스 참가기업 모집",
+      "url": "https://welcon.kocca.kr/ko/event/content-americas-2027--578",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-21",
+      "status_label": "모집중",
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    }
+  ]
+}

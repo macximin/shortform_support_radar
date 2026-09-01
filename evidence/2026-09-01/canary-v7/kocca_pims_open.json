@@ -1,0 +1,67 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v3",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "kocca_pims_open",
+    "publisher": "Korea Creative Content Agency (KOCCA)",
+    "category": "direct_support_announcement",
+    "authority": "primary",
+    "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104"
+  },
+  "observed_at": "2026-09-01T01:59:41+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "list_page",
+  "fetches": [
+    {
+      "query": null,
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
+      "http_status": 200,
+      "page_sha256": "50d41acf50e6968f02dfbd4806db916104869f2d48a37c17b1d18fa735f0fa31",
+      "page_bytes": 133847
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 2,
+  "open_candidate_count": 2,
+  "candidate_links": [
+    {
+      "title": "2026년 게임인재원 AI 외래 강사 Pool 2차 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00034006&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd=",
+      "period_start": "2026-08-10",
+      "period_end": "2026-09-04",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "2027 콘텐츠 아메리카 한국공동관 및 쇼케이스 참가기업 모집공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00085009&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd=",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-21",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    }
+  ]
+}

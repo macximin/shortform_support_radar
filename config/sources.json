@@ -1,23 +1,39 @@
 {
   "schema": "shortform-support-radar-source-registry/v1",
   "purpose": "Public, no-auth announcement discovery only. Results are candidate records, never eligibility decisions or applications.",
-  "searchNote": "A source with a search block queries the board's own index. A date-sorted list page only exposes its newest rows, so a board with thousands of notices must be queried, not scraped page by page.",
+  "searchNote": "A source with a search block queries the board's own index. A date-sorted list page only exposes its newest rows, so a board holding thousands of notices must be queried, not scraped page by page. `pages` widens the window where a board's posting rate can push a still-open notice off page one.",
+  "koccaCategoryNote": "On KOCCA PIMS, an absent category is the open-programs view and category=4 is the 종료된사업 archive (2,115 notices on 2026-09-01). category=1 and category=2 return nothing, and category=3 mirrors the open view. The archive is the searchable history; the open view is the short live list.",
   "sources": [
     {
-      "id": "kocca_pims_support",
-      "publisher": "Korea Creative Content Agency (KOCCA)",
-      "category": "direct_support_announcement",
-      "url": "https://www.kocca.kr/kocca/pims/list.do?category=4&menuNo=204104",
-      "authority": "primary",
-      "enabled": true
-    },
-    {
-      "id": "kocca_pims_support_all",
+      "id": "kocca_pims_open",
       "publisher": "Korea Creative Content Agency (KOCCA)",
       "category": "direct_support_announcement",
       "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
       "authority": "primary",
       "enabled": true
+    },
+    {
+      "id": "kocca_pims_archive",
+      "publisher": "Korea Creative Content Agency (KOCCA)",
+      "category": "direct_support_announcement_archive",
+      "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4",
+      "authority": "primary",
+      "enabled": true,
+      "search": {
+        "param": "searchWrd",
+        "extraParams": {
+          "search": "01"
+        },
+        "queries": [
+          "콘텐츠",
+          "웹툰",
+          "만화",
+          "방송영상",
+          "드라마",
+          "인공지능",
+          "해외진출"
+        ]
+      }
     },
     {
       "id": "welcon_events",
@@ -36,9 +52,10 @@
       "enabled": true,
       "search": {
         "param": "pSearchWord",
+        "pageParam": "pCurrentPage",
+        "pages": 2,
         "extraParams": {
-          "pSearchType": "01",
-          "pCurrentPage": "1"
+          "pSearchType": "01"
         },
         "queries": [
           "콘텐츠",

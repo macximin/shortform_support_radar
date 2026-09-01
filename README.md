@@ -2,19 +2,28 @@
 
 ## Current public source coverage
 
-- KOCCA PIMS direct-support announcements
+- KOCCA PIMS open programs (`kocca_pims_open`)
+- KOCCA PIMS `종료된사업` archive, queried by keyword (`kocca_pims_archive`)
 - WelCon / KOCCA export-event announcements
-- MCST culture-support announcement index
+- MCST culture-support announcement index, queried by keyword
 - Bizinfo government-support announcement index
+
+On KOCCA PIMS an absent `category` is the open-programs view and `category=4` is
+the archive of 2,115 ended programs. The two hold disjoint notices, so both are
+registered; the archive is what dates a recurring program's annual cycle.
 
 The registry intentionally excludes e-Naradoum from crawling. It is an application
 and subsidy-execution system, so it is a human-led procedural route only after a
 specific notice has been selected.
 
 A board that publishes thousands of notices is queried through its own search
-index rather than scraped page by page. `mcst_culture_support` carries a `search`
-block for this reason: its list page holds 3,383 notices across 339 date-sorted
-pages, so page one is almost never a content call.
+index rather than scraped page by page. `mcst_culture_support` (3,383 notices) and
+`kocca_pims_archive` (2,115) both carry a `search` block for this reason: on a
+date-sorted list, page one is almost never a content call. `search.pages` widens
+the window where a board's posting rate can push a still-open notice off page one.
+
+Requests are paced per host across the whole run, so two sources sharing a board
+do not fire back to back.
 
 ## Run a bounded public canary
 
@@ -32,9 +41,10 @@ python3 tools/collect_public_notices.py diff --previous evidence/2026-09-01/cana
 Each receipt records per-fetch page hashes and candidate rows only; it does not
 store HTML, session state, credentials, applicant data, or application documents.
 A candidate carries the `period_start`, `period_end`, and `status_label` the board
-already publishes, plus `open_on_observation` computed against the collection date.
-`open_on_observation` restates the board's own dates and is not an eligibility
-finding.
+already publishes, plus `period_state` and `open_on_observation` computed against
+the collection date. `period_state` is `open`, `upcoming`, `closed`, or `null`: a
+window that has not started yet is not open, and the radar must not say otherwise.
+Both restate the board's own dates and are not eligibility findings.
 
 A page hash cannot answer "what changed": view counters and session tokens move it
 on every fetch. Use `diff`, which compares candidate sets.

@@ -17,14 +17,28 @@ REGISTRY_SCHEMA = "shortform-support-radar-source-registry/v1"
 
 @dataclass(frozen=True)
 class SearchPlan:
-    """Queries issued against a board's own search index."""
+    """Queries issued against a board's own search index.
+
+    A board returns its newest rows first, so one page covers only as far back as
+    that page holds. `pages` widens the window for a board whose posting rate can
+    push a still-open notice off page one.
+    """
 
     param: str
     queries: tuple[str, ...]
     extra_params: dict[str, str] = field(default_factory=dict)
+    pages: int = 1
+    page_param: str | None = None
 
     def urls_for(self, base: PublicUrl) -> list[tuple[str, PublicUrl]]:
-        return [(query, base.with_query({**self.extra_params, self.param: query})) for query in self.queries]
+        pairs: list[tuple[str, PublicUrl]] = []
+        for query in self.queries:
+            for page in range(1, self.pages + 1):
+                params = {**self.extra_params, self.param: query}
+                if self.page_param and page > 1:
+                    params[self.page_param] = str(page)
+                pairs.append((query, base.with_query(params)))
+        return pairs
 
 
 @dataclass(frozen=True)
@@ -84,11 +98,24 @@ def _read_search(source_id: str, raw: object, errors: list[str]) -> SearchPlan |
     else:
         errors.append(f"search.extraParams must be a string map: {source_id}")
 
+    raw_pages = raw.get("pages", 1)
+    pages: int | None = raw_pages if isinstance(raw_pages, int) and not isinstance(raw_pages, bool) and raw_pages >= 1 else None
+    if pages is None:
+        errors.append(f"search.pages must be an integer >= 1: {source_id}")
+
+    raw_page_param = raw.get("pageParam")
+    page_param: str | None = raw_page_param if isinstance(raw_page_param, str) and raw_page_param else None
+    if raw_page_param is not None and page_param is None:
+        errors.append(f"search.pageParam must be a non-empty string: {source_id}")
+    if pages is not None and pages > 1 and page_param is None:
+        errors.append(f"search.pages > 1 requires search.pageParam: {source_id}")
+        pages = None
+
     # Every check runs before the bail-out so validate reports the whole problem,
     # not just the first field that failed.
-    if param is None or queries is None or extra is None:
+    if param is None or queries is None or extra is None or pages is None:
         return None
-    return SearchPlan(param=param, queries=queries, extra_params=extra)
+    return SearchPlan(param=param, queries=queries, extra_params=extra, pages=pages, page_param=page_param)
 
 
 def read_registry(document: dict) -> tuple[list[Source], list[str]]:

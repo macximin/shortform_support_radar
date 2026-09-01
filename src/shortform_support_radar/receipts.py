@@ -19,7 +19,7 @@ from .notice import Candidate
 from .policy import policy_stamp
 from .registry import Source
 
-RECEIPT_SCHEMA = "shortform-support-radar-public-receipt/v2"
+RECEIPT_SCHEMA = "shortform-support-radar-public-receipt/v3"
 DIFF_SCHEMA = "shortform-support-radar-public-diff/v1"
 
 

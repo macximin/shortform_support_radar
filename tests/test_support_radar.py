@@ -29,6 +29,7 @@ from shortform_support_radar.policy import (  # noqa: E402
     enforce_response_cap,
     policy_stamp,
 )
+from shortform_support_radar.collection import HostRateLimiter  # noqa: E402
 from shortform_support_radar.receipts import diff_documents  # noqa: E402
 from shortform_support_radar.registry import REGISTRY_SCHEMA, load_registry, read_registry  # noqa: E402
 
@@ -86,10 +87,26 @@ class NoticeDomainTests(unittest.TestCase):
         )
         self.assertEqual(NoticePeriod.parse("상시모집"), NoticePeriod())
 
-    def test_open_state_restates_the_board_end_date(self):
+    def test_open_state_restates_the_board_dates(self):
         self.assertTrue(NoticePeriod(end=dt.date(2026, 9, 21)).is_open_on(OBSERVED_ON))
         self.assertFalse(NoticePeriod(end=dt.date(2026, 8, 31)).is_open_on(OBSERVED_ON))
         self.assertIsNone(NoticePeriod().is_open_on(OBSERVED_ON))
+
+    def test_a_window_that_has_not_started_is_upcoming_not_open(self):
+        upcoming = NoticePeriod(dt.date(2026, 10, 1), dt.date(2026, 10, 30))
+        self.assertEqual(upcoming.state_on(OBSERVED_ON), "upcoming")
+        self.assertFalse(upcoming.is_open_on(OBSERVED_ON))
+
+    def test_period_states(self):
+        cases = {
+            "closed": NoticePeriod(dt.date(2026, 8, 1), dt.date(2026, 8, 31)),
+            "open": NoticePeriod(dt.date(2026, 8, 20), dt.date(2026, 9, 21)),
+            "upcoming": NoticePeriod(dt.date(2026, 10, 1), dt.date(2026, 10, 31)),
+        }
+        for expected, period in cases.items():
+            with self.subTest(expected=expected):
+                self.assertEqual(period.state_on(OBSERVED_ON), expected)
+        self.assertIsNone(NoticePeriod().state_on(OBSERVED_ON))
 
     def test_title_and_row_predicates(self):
         self.assertTrue(looks_like_notice_title("2026 웹툰 IP 제작지원 모집"))
@@ -206,6 +223,82 @@ class RegistryTests(unittest.TestCase):
         sources, errors = load_registry(ROOT / "config" / "sources.json")
         self.assertEqual(errors, [])
         self.assertTrue(sources)
+
+
+class SearchPaginationTests(unittest.TestCase):
+    def plan(self, **search):
+        base = {"param": "q", "queries": ["웹툰"]}
+        document = {
+            "schema": REGISTRY_SCHEMA,
+            "sources": [{"id": "one", "url": "https://a.go.kr/l", "enabled": True, "search": {**base, **search}}],
+        }
+        return read_registry(document)
+
+    def test_single_page_is_the_default(self):
+        sources, errors = self.plan()
+        self.assertEqual(errors, [])
+        self.assertEqual(len(sources[0].requests()), 1)
+
+    def test_pages_expand_into_one_request_per_page(self):
+        sources, errors = self.plan(pages=3, pageParam="p")
+        self.assertEqual(errors, [])
+        urls = [str(u) for _, u in sources[0].requests()]
+        self.assertEqual(len(urls), 3)
+        self.assertNotIn("p=", urls[0])
+        self.assertIn("p=2", urls[1])
+        self.assertIn("p=3", urls[2])
+
+    def test_pages_without_a_page_param_is_rejected(self):
+        _, errors = self.plan(pages=2)
+        self.assertIn("search.pages > 1 requires search.pageParam: one", errors)
+
+    def test_pages_must_be_a_positive_integer(self):
+        for bad in (0, -1, "2", True):
+            with self.subTest(bad=bad):
+                _, errors = self.plan(pages=bad, pageParam="p")
+                self.assertIn("search.pages must be an integer >= 1: one", errors)
+
+
+class HostRateLimiterTests(unittest.TestCase):
+    def limiter(self):
+        slept: list[float] = []
+        now = [0.0]
+
+        def sleep(seconds):
+            slept.append(seconds)
+            now[0] += seconds
+
+        return HostRateLimiter(interval=1.0, sleep=sleep, clock=lambda: now[0]), slept, now
+
+    def test_first_request_to_a_host_does_not_wait(self):
+        limiter, slept, _ = self.limiter()
+        limiter.wait_for(PublicUrl("https://a.go.kr/1"))
+        self.assertEqual(slept, [])
+
+    def test_second_request_to_the_same_host_waits(self):
+        limiter, slept, _ = self.limiter()
+        limiter.wait_for(PublicUrl("https://a.go.kr/1"))
+        limiter.wait_for(PublicUrl("https://a.go.kr/2"))
+        self.assertEqual(slept, [1.0])
+
+    def test_pacing_holds_across_sources_sharing_a_host(self):
+        limiter, slept, _ = self.limiter()
+        for url in ("https://a.go.kr/x", "https://b.go.kr/y", "https://a.go.kr/z"):
+            limiter.wait_for(PublicUrl(url))
+        self.assertEqual(slept, [1.0])
+
+    def test_a_different_host_never_waits(self):
+        limiter, slept, _ = self.limiter()
+        limiter.wait_for(PublicUrl("https://a.go.kr/1"))
+        limiter.wait_for(PublicUrl("https://b.go.kr/1"))
+        self.assertEqual(slept, [])
+
+    def test_elapsed_time_counts_against_the_interval(self):
+        limiter, slept, now = self.limiter()
+        limiter.wait_for(PublicUrl("https://a.go.kr/1"))
+        now[0] += 0.75
+        limiter.wait_for(PublicUrl("https://a.go.kr/2"))
+        self.assertEqual(slept, [0.25])
 
 
 class DiffTests(unittest.TestCase):

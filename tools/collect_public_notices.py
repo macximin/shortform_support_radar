@@ -16,7 +16,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from shortform_support_radar.collection import collect, utc_now  # noqa: E402
+from shortform_support_radar.collection import HostRateLimiter, collect, utc_now  # noqa: E402
 from shortform_support_radar.policy import PolicyViolation  # noqa: E402
 from shortform_support_radar.receipts import diff_directories  # noqa: E402
 from shortform_support_radar.registry import load_registry  # noqa: E402
@@ -39,12 +39,24 @@ def run_collect(sources: list, selector: str, out_dir: Path) -> int:
             print(json.dumps({"status": "error", "error": f"unknown source: {selector}"}, ensure_ascii=False))
             return 2
 
+    # One limiter across the run: two sources can share a host, and pacing must
+    # hold across that boundary as well as inside a source.
+    limiter = HostRateLimiter()
     exit_code = 0
     for source in selected:
         try:
-            receipt = collect(source)
+            receipt = collect(source, limiter=limiter)
         except (OSError, PolicyViolation, TimeoutError) as error:
             print(json.dumps({"status": "error", "source": source.id, "error": str(error)}, ensure_ascii=False))
+            exit_code = 1
+            continue
+        except Exception as error:  # noqa: BLE001 - one bad board must not end the run
+            print(
+                json.dumps(
+                    {"status": "error", "source": source.id, "error": f"{type(error).__name__}: {error}"},
+                    ensure_ascii=False,
+                )
+            )
             exit_code = 1
             continue
         path = receipt.write(out_dir)

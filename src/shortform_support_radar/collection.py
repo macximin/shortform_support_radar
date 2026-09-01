@@ -6,6 +6,7 @@ import datetime as dt
 import hashlib
 import re
 import time
+from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 from .boards import read_candidates
@@ -21,6 +22,31 @@ from .receipts import Fetch, Receipt
 from .registry import Source
 
 KST = dt.timezone(dt.timedelta(hours=9))
+
+
+class HostRateLimiter:
+    """Space out requests per host.
+
+    Two sources can point at the same board, so pacing inside one source is not
+    enough: without this, back-to-back sources hit the same host with no gap.
+    """
+
+    def __init__(self, interval: float = REQUEST_INTERVAL_SECONDS, sleep=time.sleep, clock=time.monotonic) -> None:
+        self._interval = interval
+        self._sleep = sleep
+        self._clock = clock
+        self._last: dict[str, float] = {}
+
+    def wait_for(self, url: PublicUrl) -> None:
+        host = urlparse(str(url)).netloc
+        previous = self._last.get(host)
+        now = self._clock()
+        if previous is not None:
+            remaining = self._interval - (now - previous)
+            if remaining > 0:
+                self._sleep(remaining)
+                now = self._clock()
+        self._last[host] = now
 
 
 def utc_now() -> str:
@@ -56,16 +82,16 @@ def fetch_public_page(url: PublicUrl) -> tuple[int, PublicUrl, bytes, str]:
         return response.status, final_url, body, decode_body(body, response.headers.get("Content-Type"))
 
 
-def collect(source: Source, observed_on: dt.date | None = None, sleep=time.sleep) -> Receipt:
+def collect(source: Source, observed_on: dt.date | None = None, limiter: HostRateLimiter | None = None) -> Receipt:
     observed_at = utc_now()
     observed_on = observed_on or today_kst()
+    limiter = limiter or HostRateLimiter()
     fetches: list[Fetch] = []
     candidates: list[Candidate] = []
     seen: set[tuple[str, str]] = set()
 
-    for index, (query, url) in enumerate(source.requests()):
-        if index:
-            sleep(REQUEST_INTERVAL_SECONDS)
+    for query, url in source.requests():
+        limiter.wait_for(url)
         status, final_url, body, page = fetch_public_page(url)
         fetches.append(
             Fetch(

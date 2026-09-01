@@ -81,11 +81,24 @@ class NoticePeriod:
             return cls()
         return cls(_to_date(*match.group(1, 2, 3)), _to_date(*match.group(4, 5, 6)))
 
-    def is_open_on(self, day: dt.date) -> bool | None:
-        """Restate the board's own end date against a day. Not an eligibility test."""
+    def state_on(self, day: dt.date) -> str | None:
+        """Restate the board's own dates as a state. Not an eligibility test.
+
+        A window that has not started yet is "upcoming", not "open"; reporting it
+        as open is what a radar must not do.
+        """
         if self.end is None:
             return None
-        return self.end >= day
+        if self.end < day:
+            return "closed"
+        if self.start is not None and self.start > day:
+            return "upcoming"
+        return "open"
+
+    def is_open_on(self, day: dt.date) -> bool | None:
+        """True only while the window has started and has not ended."""
+        state = self.state_on(day)
+        return None if state is None else state == "open"
 
 
 def find_status_label(text: str) -> str | None:
@@ -124,6 +137,7 @@ class Candidate:
             "period_start": self.period.start.isoformat() if self.period.start else None,
             "period_end": self.period.end.isoformat() if self.period.end else None,
             "status_label": self.status_label,
+            "period_state": self.period.state_on(observed_on),
             "open_on_observation": self.period.is_open_on(observed_on),
             "matched_query": self.matched_query,
         }
