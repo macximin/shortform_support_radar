@@ -1,0 +1,109 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v3",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "kocca_pims_open",
+    "publisher": "Korea Creative Content Agency (KOCCA)",
+    "category": "direct_support_announcement",
+    "authority": "primary",
+    "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104"
+  },
+  "observed_at": "2026-09-01T04:29:22+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "list_page",
+  "fetches": [
+    {
+      "query": null,
+      "requested_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
+      "final_url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104",
+      "http_status": 200,
+      "page_sha256": "2b5a14004f2fd2e0051e7725539eb068d392da73b3fe30422c69d94232b5abb4",
+      "page_bytes": 133847
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "만화",
+    "애니메이션",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 6,
+  "open_candidate_count": 5,
+  "candidate_links": [
+    {
+      "title": "2026년 게임인재원 AI 외래 강사 Pool 2차 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00034006&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd=",
+      "period_start": "2026-08-10",
+      "period_end": "2026-09-04",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "K-브랜드 홍보·판촉 마켓 참가기업 모집 추가공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00088010&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd=",
+      "period_start": "2026-08-26",
+      "period_end": "2026-09-07",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "2026 ATF 한국공동관 애니메이션 참가기업 모집",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00037013&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd=",
+      "period_start": "2026-08-25",
+      "period_end": "2026-09-08",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "2027 콘텐츠 아메리카 한국공동관 및 쇼케이스 참가기업 모집공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00085009&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd=",
+      "period_start": "2026-08-31",
+      "period_end": "2026-09-21",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "[수정/상시공고] 2026년 글로벌게임허브센터 신규 입주기업 추가모집(상시) 수정공고",
+      "url": "https://www.kocca.kr/kocca/pims/view.do?intcNo=326D00034004&menuNo=204104&recptSt=&category=&pageIndex=1&search=&searchWrd=",
+      "period_start": "2026-04-27",
+      "period_end": "2026-12-31",
+      "status_label": "상시",
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": null
+    },
+    {
+      "title": "종료된사업",
+      "url": "https://www.kocca.kr/kocca/pims/list.do?menuNo=204104&category=4&recptSt=",
+      "period_start": null,
+      "period_end": null,
+      "status_label": "종료",
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": null
+    }
+  ]
+}

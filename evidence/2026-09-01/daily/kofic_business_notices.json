@@ -1,0 +1,199 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v3",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "kofic_business_notices",
+    "publisher": "Korean Film Council (KOFIC)",
+    "category": "film_support_announcement",
+    "authority": "primary",
+    "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do"
+  },
+  "observed_at": "2026-09-01T04:29:30+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "server_side_query",
+  "fetches": [
+    {
+      "query": "인공지능",
+      "requested_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
+      "final_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
+      "http_status": 200,
+      "page_sha256": "3d7f745ccc321c2ca4f259c753d96c73a5828fc571e130b8e0c22ca722f4fd8c",
+      "page_bytes": 102046
+    },
+    {
+      "query": "AI",
+      "requested_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=AI",
+      "final_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=AI",
+      "http_status": 200,
+      "page_sha256": "fc0f53c99d3c4ceb368bcf2ddab1193499b65a6020da7886d6a569f15cb4e427",
+      "page_bytes": 102036
+    },
+    {
+      "query": "숏폼",
+      "requested_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%88%8F%ED%8F%BC",
+      "final_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%88%8F%ED%8F%BC",
+      "http_status": 200,
+      "page_sha256": "422c7ebb4211c7c3eb536a41b93778bd91dea67a83e9daa171aa863adac504f9",
+      "page_bytes": 102040
+    },
+    {
+      "query": "시리즈",
+      "requested_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%8B%9C%EB%A6%AC%EC%A6%88",
+      "final_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%8B%9C%EB%A6%AC%EC%A6%88",
+      "http_status": 200,
+      "page_sha256": "e7e5443dfc0e6a33177ad969b776506c116bf7a5d777ca956fe06f2cb7ecab64",
+      "page_bytes": 102043
+    },
+    {
+      "query": "온라인",
+      "requested_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8",
+      "final_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8",
+      "http_status": 200,
+      "page_sha256": "6c4d8f57bb75f53e80b4ff487aba938772c2c4819ea2f9af2562ad4d3185169b",
+      "page_bytes": 106549
+    },
+    {
+      "query": "첨단",
+      "requested_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%B2%A8%EB%8B%A8",
+      "final_url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%B2%A8%EB%8B%A8",
+      "http_status": 200,
+      "page_sha256": "366b14fa90a83f3e5c986ea2303b3fed425f943bc052b52f6f0167b3859dd657",
+      "page_bytes": 106964
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "만화",
+    "애니메이션",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 11,
+  "open_candidate_count": 0,
+  "candidate_links": [
+    {
+      "title": "2021년 일자리 연계형 온라인·뉴미디어 영상콘텐츠 제작 지원 사업 시행 공고",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "2021년 일자리 연계형 온라인․뉴미디어 영상콘텐츠 제작지원사업 선정자(팀) 공고",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "2021년 일자리 연계형 온라인뉴미디어 영상콘텐츠 제작지원사업 접수 결과 공지",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "2025년 첨단영화제작교육 - AI 단편영화제작 교육 - 교육생 모집 최종합격자 공지",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%B2%A8%EB%8B%A8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "첨단"
+    },
+    {
+      "title": "일자리 연계형 온라인 뉴미디어 영상콘텐츠 제작지원사업 접수 결과 공지",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "일자리 연계형 온라인·뉴미디어 영상콘텐츠 제작지원 온라인 영화제 결과 지연 안내",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "일자리 연계형 온라인·뉴미디어 영상콘텐츠 제작지원 온라인 영화제 결과(첨부 등 수정)",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "일자리 연계형 온라인·뉴미디어 영상콘텐츠 제작지원 우수 영상물 심사 결과 안내(온라인 영화제 결과 추후 별도 공지)",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "일자리 연계형 온라인․뉴미디어 영상콘텐츠 제작지원사업 심사 결과 공지",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "일자리 연계형 온라인・뉴미디어 영상콘텐츠 제작지원 사업 시행 공고",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    },
+    {
+      "title": "일자리 연계형 온라인・뉴미디어 영상콘텐츠 제작지원 우수 영상물 심사 결과 안내",
+      "url": "https://www.kofic.or.kr/kofic/business/prom/promotionBoardList.do?searchTitle=%EC%98%A8%EB%9D%BC%EC%9D%B8#none",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "온라인"
+    }
+  ]
+}

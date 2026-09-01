@@ -1,0 +1,343 @@
+{
+  "schema": "shortform-support-radar-public-receipt/v3",
+  "candidate_only": true,
+  "not_an_eligibility_decision": true,
+  "source": {
+    "id": "bizinfo_notices",
+    "publisher": "K-Startup Business Information",
+    "category": "government_support_announcement_index",
+    "authority": "government_index",
+    "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do"
+  },
+  "observed_at": "2026-09-01T04:29:48+00:00",
+  "observed_on_kst": "2026-09-01",
+  "search_mode": "server_side_query",
+  "fetches": [
+    {
+      "query": "콘텐츠",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%BD%98%ED%85%90%EC%B8%A0",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%BD%98%ED%85%90%EC%B8%A0",
+      "http_status": 200,
+      "page_sha256": "fde90844a411ae5ea63cd8a689b523acb14768780c245c9f58ad63b1d8c4cb24",
+      "page_bytes": 109105
+    },
+    {
+      "query": "웹툰",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9B%B9%ED%88%B0",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9B%B9%ED%88%B0",
+      "http_status": 200,
+      "page_sha256": "a40a0e42427c958388b3ff1c17b13c73c8fee46dbf67ec98d84e4a78f2033516",
+      "page_bytes": 91206
+    },
+    {
+      "query": "만화",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%A7%8C%ED%99%94",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%A7%8C%ED%99%94",
+      "http_status": 200,
+      "page_sha256": "e154f768ccdb8a769112395e2646f49c607465fe9789f71e79ed0c090afb917b",
+      "page_bytes": 88659
+    },
+    {
+      "query": "영상",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%98%81%EC%83%81",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%98%81%EC%83%81",
+      "http_status": 200,
+      "page_sha256": "9a884ea81736aed1aff30a147d1ddc3b151ddd9667cc2803a8d6837a1773eb66",
+      "page_bytes": 92615
+    },
+    {
+      "query": "드라마",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88",
+      "http_status": 200,
+      "page_sha256": "741ca52b88e59970942a99186f7a2927436aac1f661c4b45639d4dc23816ca22",
+      "page_bytes": 91202
+    },
+    {
+      "query": "애니메이션",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98",
+      "http_status": 200,
+      "page_sha256": "3fb1b9522926cbfda08a62c5931f83de91b416154451e3791836c00394a7560b",
+      "page_bytes": 91308
+    },
+    {
+      "query": "인공지능",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5",
+      "http_status": 200,
+      "page_sha256": "69a6fff4fc22d72bb15a371bc715715e9777213c2d7f6fac99414b15f1ed3222",
+      "page_bytes": 99001
+    },
+    {
+      "query": "해외진출",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchPblancNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C",
+      "http_status": 200,
+      "page_sha256": "722604043a96946a35896d9903b83072cc0b0a054403cd4fd13dc86e0a600521",
+      "page_bytes": 95787
+    },
+    {
+      "query": "한국콘텐츠진흥원",
+      "requested_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchExcInsttNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90",
+      "final_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do?condition=searchExcInsttNm&condition1=AND&schEndAt=N&rowsSel=6&rows=15&cpage=1&keyword=%ED%95%9C%EA%B5%AD%EC%BD%98%ED%85%90%EC%B8%A0%EC%A7%84%ED%9D%A5%EC%9B%90",
+      "http_status": 200,
+      "page_sha256": "9d51f38f26d2c61f62fb2fa660c59eb044540e5e06d395357fc6aa7e02064110",
+      "page_bytes": 97447
+    }
+  ],
+  "keyword_set": [
+    "인공지능",
+    "ai",
+    "생성형",
+    "방송영상",
+    "드라마",
+    "숏드라마",
+    "숏폼",
+    "웹툰",
+    "webtoon",
+    "만화",
+    "애니메이션",
+    "ip",
+    "지식재산",
+    "콘텐츠",
+    "해외진출",
+    "수출",
+    "제작지원",
+    "제작 지원"
+  ],
+  "candidate_count": 23,
+  "open_candidate_count": 12,
+  "candidate_links": [
+    {
+      "title": "2026년 ATF 연계 방송콘텐츠 해외유통 지원 사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125340",
+      "period_start": "2026-08-10",
+      "period_end": "2026-09-08",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 ATF 한국공동관 애니메이션 참가기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98&pblancId=PBLN_000000000125795",
+      "period_start": "2026-08-25",
+      "period_end": "2026-09-08",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "애니메이션"
+    },
+    {
+      "title": "2026년 디지털콘텐츠 융합기업 글로벌 마켓 참가 사업(XR Fair Tokyo Autumn 2026) 참가기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125353",
+      "period_start": "2026-08-10",
+      "period_end": "2026-09-08",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[부산] 2026년 3차 게임콘텐츠 멀티부스팅 지원사업 추가 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125922",
+      "period_start": "2026-08-27",
+      "period_end": "2026-09-09",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[대구] 2026년 콘텐츠 스케일업 액셀러레이팅 프로그램 참여기업 추가모집 공고(대구콘텐츠기업지원센터)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125897",
+      "period_start": "2026-08-26",
+      "period_end": "2026-09-10",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[세종] 2026년 지역특화콘텐츠개발지원 사업 공고 (웹툰콘텐츠분야)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125901",
+      "period_start": "2026-08-27",
+      "period_end": "2026-09-10",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[충북] 2026년 2차 충북 인공지능산업 컨트롤타워 기반 구축사업 AI융합 기획과제 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&pblancId=PBLN_000000000125965",
+      "period_start": "2026-08-26",
+      "period_end": "2026-09-17",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[경기] 2026년 문화프로슈머ㆍ크라우드 펀딩 콘텐츠 기업 상시모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125824",
+      "period_start": "2026-08-25",
+      "period_end": "2026-09-18",
+      "status_label": "상시",
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 DNA 융합 제품ㆍ서비스 해외진출 지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C&pblancId=PBLN_000000000119394",
+      "period_start": "2026-03-10",
+      "period_end": "2026-09-30",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "[전남광주] 2026년 투자진흥지구 및 지역 콘텐츠기업 보증료ㆍ출원료 지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125282",
+      "period_start": "2026-08-05",
+      "period_end": "2026-09-30",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 실감콘텐츠 스튜디오 프로젝트 현물지원기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000118285",
+      "period_start": "2026-02-02",
+      "period_end": "2026-12-01",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[인천] 2026년 가상융합산업 콘텐츠 제작 장비 임차지원 공고(인천 가상융합산업 혁신센터)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000117307",
+      "period_start": "2026-01-23",
+      "period_end": "2026-12-31",
+      "status_label": null,
+      "period_state": "open",
+      "open_on_observation": true,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "2026년 K-Global 해외진출 지원사업 참여기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%ED%95%B4%EC%99%B8%EC%A7%84%EC%B6%9C&pblancId=PBLN_000000000120275",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "해외진출"
+    },
+    {
+      "title": "2026년 전남 영화ㆍ드라마 제작 인센티브 지원사업 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EB%93%9C%EB%9D%BC%EB%A7%88&pblancId=PBLN_000000000122656",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "드라마"
+    },
+    {
+      "title": "2026년 콘텐츠 기업 노무 컨설팅 참가기업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000122428",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[광주] 2026년 소상공인 SNSㆍ블로그 홍보지원 참여업체 모집 공고(디지털콘텐츠 홍보지원사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000121231",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[광주] 인공지능 유치기업 보조금 지원사업 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&pblancId=PBLN_000000000117371",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[부산] 2026년 게임ㆍ콘텐츠 기업을 위한 무료 법률 자문 오피스아워 상시 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000123841",
+      "period_start": null,
+      "period_end": null,
+      "status_label": "상시",
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[울산] 울산콘텐츠코리아랩 U-Grow 상시 컨설팅 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%BD%98%ED%85%90%EC%B8%A0&pblancId=PBLN_000000000125089",
+      "period_start": null,
+      "period_end": null,
+      "status_label": "상시",
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "콘텐츠"
+    },
+    {
+      "title": "[전남광주] 2026년 3차 인공지능 기술 고도화 지원사업 상시 모집 공고(AI융합 지능형 농업 생태계 구축)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&pblancId=PBLN_000000000124433",
+      "period_start": null,
+      "period_end": null,
+      "status_label": "상시",
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[전남광주] 2026년 AI융합 지능형 농업 생태계 구축 인공지능 기술 고도화(신뢰성평가) 지원사업 추가 모집 공고",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&pblancId=PBLN_000000000125888",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[전북] 2026년 3차 인공지능 전환 도입 컨설팅 지원사업 수시 모집 공고(AX실증산단 구축사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&pblancId=PBLN_000000000125775",
+      "period_start": null,
+      "period_end": null,
+      "status_label": null,
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "인공지능"
+    },
+    {
+      "title": "[전북] 인공지능 분야 기술지도 희망기업 모집 상시 공고(AI융합 지능형 농업 생태계 구축 사업)",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?hashCode=&rowsSel=6&rows=15&cpage=1&cat=&schPblancDiv=&schJrsdCodeTy=&schWntyAt=&schAreaDetailCodes=&schEndAt=N&orderGb=&sort=&preKeywords=&condition=searchPblancNm&condition1=AND&keyword=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&pblancId=PBLN_000000000121749",
+      "period_start": null,
+      "period_end": null,
+      "status_label": "상시",
+      "period_state": null,
+      "open_on_observation": null,
+      "matched_query": "인공지능"
+    }
+  ]
+}
