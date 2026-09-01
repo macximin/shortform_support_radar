@@ -39,10 +39,13 @@ finding.
 A page hash cannot answer "what changed": view counters and session tokens move it
 on every fetch. Use `diff`, which compares candidate sets.
 
-Run the tests:
+Run the tests, lint, and type checks:
 
 ```bash
+python3 -m pip install -e ".[dev]"
 python3 tests/test_support_radar.py
+python3 -m ruff check src tools tests
+python3 -m mypy
 ```
 
 ## Module map

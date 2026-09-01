@@ -176,6 +176,19 @@ class RegistryTests(unittest.TestCase):
         _, errors = read_registry(self.document(search={"param": "q", "queries": []}))
         self.assertIn("search.queries must be a non-empty list of strings: one", errors)
 
+    def test_reports_every_malformed_search_field_at_once(self):
+        _, errors = read_registry(
+            self.document(search={"param": "", "queries": [], "extraParams": {"k": 1}})
+        )
+        self.assertEqual(
+            errors,
+            [
+                "search.param must be a non-empty string: one",
+                "search.queries must be a non-empty list of strings: one",
+                "search.extraParams must be a string map: one",
+            ],
+        )
+
     def test_search_source_builds_one_request_per_query(self):
         sources, errors = read_registry(
             self.document(

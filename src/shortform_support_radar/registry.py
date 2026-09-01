@@ -64,22 +64,31 @@ def _read_search(source_id: str, raw: object, errors: list[str]) -> SearchPlan |
     if not isinstance(raw, dict):
         errors.append(f"search must be an object: {source_id}")
         return None
-    param = raw.get("param")
-    queries = raw.get("queries")
-    extra = raw.get("extraParams", {})
-    ok = True
-    if not isinstance(param, str) or not param:
+    raw_param = raw.get("param")
+    raw_queries = raw.get("queries")
+    raw_extra = raw.get("extraParams", {})
+
+    param: str | None = raw_param if isinstance(raw_param, str) and raw_param else None
+    if param is None:
         errors.append(f"search.param must be a non-empty string: {source_id}")
-        ok = False
-    if not isinstance(queries, list) or not queries or not all(isinstance(q, str) and q for q in queries):
+
+    queries: tuple[str, ...] | None = None
+    if isinstance(raw_queries, list) and raw_queries and all(isinstance(q, str) and q for q in raw_queries):
+        queries = tuple(raw_queries)
+    else:
         errors.append(f"search.queries must be a non-empty list of strings: {source_id}")
-        ok = False
-    if not isinstance(extra, dict) or not all(isinstance(k, str) and isinstance(v, str) for k, v in extra.items()):
+
+    extra: dict[str, str] | None = None
+    if isinstance(raw_extra, dict) and all(isinstance(k, str) and isinstance(v, str) for k, v in raw_extra.items()):
+        extra = dict(raw_extra)
+    else:
         errors.append(f"search.extraParams must be a string map: {source_id}")
-        ok = False
-    if not ok:
+
+    # Every check runs before the bail-out so validate reports the whole problem,
+    # not just the first field that failed.
+    if param is None or queries is None or extra is None:
         return None
-    return SearchPlan(param=param, queries=tuple(queries), extra_params=dict(extra))
+    return SearchPlan(param=param, queries=queries, extra_params=extra)
 
 
 def read_registry(document: dict) -> tuple[list[Source], list[str]]:

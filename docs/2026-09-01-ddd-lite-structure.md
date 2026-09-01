@@ -71,5 +71,27 @@ The CLI, the receipt schema (`shortform-support-radar-public-receipt/v2`), the
 registry schema, and the source list are all the same. Scheduled execution remains
 absent and is owned by the repository owner.
 
+## Lint and type checking
+
 `ruff` and `mypy` are declared as optional dev dependencies to match the foundry
-repo. Neither is installed in this environment, so neither was run here.
+repo, and are now installed:
+
+```bash
+python3 -m pip install -e ".[dev]"
+python3 -m ruff check src tools tests
+python3 -m mypy
+```
+
+`ruff` passed on the first run. `mypy` found two real errors in `registry.py`: the
+`ok = False` flag pattern used while validating a `search` block never narrowed
+`param` and `queries`, so both reached the `SearchPlan` constructor typed
+`Any | None`. Validation now binds a narrowed local per field and bails only after
+every field has been checked, which keeps `validate` reporting the whole problem
+rather than the first bad field. A test locks that multi-error behaviour in.
+
+The fix changed no output: the five `canary-v5` receipts were reproduced field for
+field afterwards, excluding volatile fields.
+
+`.gitignore` gained the foundry entries (`.pytest_cache/`, `.venv/`, `dist/`,
+`build/`, `*.egg-info/`) so the editable install leaves nothing tracked. Ruff and
+mypy write self-ignoring caches, so those need no entry.
