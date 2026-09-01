@@ -118,7 +118,8 @@ candidate-only claim is written.
 Whether a company may apply, and whether it would be selected, is decided against
 the notice text outside this context.
 
-AI 숏드라마와 Lezhin Snack IP 사업에 관련된 공개 지원사업을 **후보 단계**에서 수집·검증하는 private repository다.
+AI 숏드라마와 Lezhin Snack IP 사업에 관련된 공개 지원사업을 **후보 단계**에서 수집·검증한다.
+저장소는 공개이며, 수집 대상도 전부 인증 없이 열람 가능한 공공 게시판이다.
 
 ## 범위
 
@@ -128,13 +129,14 @@ AI 숏드라마와 Lezhin Snack IP 사업에 관련된 공개 지원사업을 **
 
 ### 등록 현황과 미등록 구간
 
-선언된 범위와 `config/sources.json`의 실제 등록분은 아직 일치하지 않는다.
+선언된 범위와 `config/sources.json`의 실제 등록분 대조:
 
 - 지역 콘텐츠진흥원은 MCST 문화지원사업 색인과 Bizinfo가 기관 공고를 모아 싣기 때문에 두 소스의
   검색을 통해 수집된다. 별도 소스가 아니다.
 - KOTRA도 Bizinfo를 통해 들어온다. 별도 등록은 중복만 만든다.
-- KOFIC은 제외했다. 사업공지 게시판이 전부 영화 사업이고 `인공지능`·`AI`·`숏폼` 제목 검색에
-  걸리는 공고가 없으며 Bizinfo에도 올라오지 않는다. 근거는 `config/sources.json#excluded`에 있다.
+- KOFIC은 감시용으로 등록했다. 게시판이 영화 사업 위주라 지금 범위에 드는 열린 공고는 없지만,
+  `첨단`·`온라인` 탐침에 AI 단편영화제작 교육과 온라인·뉴미디어 영상콘텐츠 제작지원이 걸린다.
+  모집기간 컬럼이 없어 open/closed를 읽을 수 없으므로 `diff`로 변화만 본다.
 - 공고 첨부문서는 수집하지 않는다. 현재 도구는 목록 행만 읽는다.
 
 ## 운영 경계
